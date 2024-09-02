@@ -2,7 +2,7 @@ import React from "react";
 import FeatureLeft from "../components/FeatureLeft";
 import FeatureRight from "../components/FeatureRight";
 import EnvironmentalFeature from "../components/EnvironmentalFeature";
-import QuickCleanFresh from "../components/quickcleanfresh";
+import QuickCleanFresh from "../components/QuickCleanFresh";
 import AboutUsImage from "../assets/aboutus.jpeg";
 import CustomerStories from "../components/CustomerStories";
 import Schedule from "../components/Schedule";
