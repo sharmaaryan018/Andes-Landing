@@ -4,32 +4,41 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-500 py-4 fixed w-full top-0 z-50">
+    <nav className="bg-blue-500 py-4 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <img
               src="/api/placeholder/40/40"
-              alt="Laundryheap logo"
-              className="mr-2"
+              alt="Andes logo"
+              className="mr-3 h-10 w-10"
             />
             <span className="text-white text-2xl font-bold">Andes</span>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <a href="/working" className="text-white hover:text-gray-200">
+            <a
+              href="/working"
+              className="text-white hover:text-gray-200 transition duration-300"
+            >
               How it works
             </a>
-            <a href="/services" className="text-white hover:text-gray-200">
+            <a
+              href="/services"
+              className="text-white hover:text-gray-200 transition duration-300"
+            >
               Services & Pricing
             </a>
-            <a href="/about" className="text-white hover:text-gray-200">
+            <a
+              href="/about"
+              className="text-white hover:text-gray-200 transition duration-300"
+            >
               About us
             </a>
             <a
               href="/book-now"
-              className="bg-white text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100"
+              className="bg-white text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
             >
               Book now
             </a>
@@ -62,27 +71,28 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div className={`${isOpen ? "block" : "hidden"} md:hidden mt-4`}>
-          <a href="#" className="block text-white py-2">
+          <a
+            href="/working"
+            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+          >
             How it works
           </a>
-          <a href="#" className="block text-white py-2">
-            Prices & Services
-          </a>
-          <a href="#" className="block text-white py-2">
-            About us
-          </a>
-          <a href="#" className="block text-white py-2">
-            FAQ
-          </a>
-          <a href="#" className="block text-white py-2">
-            For business
-          </a>
-          <a href="#" className="block text-white py-2">
-            Log in
+          <a
+            href="/services"
+            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+          >
+            Services & Pricing
           </a>
           <a
-            href="#"
-            className="block bg-white text-blue-500 px-4 py-2 rounded-full font-semibold mt-2"
+            href="/about"
+            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+          >
+            About us
+          </a>
+
+          <a
+            href="/book-now"
+            className=" bg-white text-blue-500  px-2 py-1 rounded-full font-semibold  mt-2 hover:bg-gray-100 transition duration-300"
           >
             Book now
           </a>

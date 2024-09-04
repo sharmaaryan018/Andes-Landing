@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import Working from "./pages/Working";
 import MyFooter from "./components/MyFooter";
+import SocietyForm from "./pages/SocietyForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/working" element={<Working />} />
+            <Route path="/book-now" element={<SocietyForm />} />
           </Routes>
         </div>
         <MyFooter /> {/* Footer stays at the bottom of the page */}
