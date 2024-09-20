@@ -5,7 +5,7 @@ Welcome to the Andes Frontend Developer Challenge! This challenge is designed to
 
 ## Challenge Overview
 
-Your task is to make several enhancements and improvements to the provided frontend project. Please follow the instructions carefully and focus on writing clean and maintainable code.
+Your task is to make several enhancements and improvements to the provided frontend project using TailwindCss+react only. Please follow the instructions carefully and focus on writing clean and maintainable code.
 
 ### Task 1: Add Smooth Scroll
 - **Objective**: Implement smooth scrolling functionality across the site.
@@ -77,8 +77,8 @@ Follow these steps to participate in the challenge:
 ### Step 2: Clone the Repository
 - Clone the forked repository to your local machine:
   ```bash
-  git clone https://github.com/your-username/andes-frontend-challenge.git
-  cd andes-frontend-challenge
+  git clone https://github.com/your-username/andes-landing
+  cd andes-landing
   ```
 
 ### Step 3: Make Changes
@@ -103,8 +103,8 @@ Follow these steps to participate in the challenge:
 ### Step 6: Submit the Pull Request
 - Once your work is complete and the PR is ready, submit it. Our team will review your submission and provide feedback.
 
+---
 ## Queries?
 for any doubts and query feel free to mail us at andesnow1604@gmail.com or saubhagyasingh65@gmail.com
----
 
 Good luck! We look forward to reviewing your submission.
