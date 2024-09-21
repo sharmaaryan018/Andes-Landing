@@ -3,7 +3,7 @@
 
 Welcome to the Andes Frontend Developer Challenge! This challenge is designed to test your skills in frontend development, attention to detail, and creativity. A semi-furnished project has been provided for you to complete the following tasks.
 
-## Challenge Overview
+## Challenge Overview - to be completed by 23rd September, 11:30 AM
 
 Your task is to make several enhancements and improvements to the provided frontend project using TailwindCss+react only. Please follow the instructions carefully and focus on writing clean and maintainable code.
 
