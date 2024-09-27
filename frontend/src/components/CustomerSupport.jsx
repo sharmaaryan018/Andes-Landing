@@ -1,4 +1,3 @@
-import React from "react";
 import { FaRegComment } from "react-icons/fa";
 import support from "../assets/customersupport.jpeg";
 
@@ -42,16 +41,16 @@ const CustomerSupport = () => {
 
       {/* Right Section */}
       <div className="md:w-1/2 flex flex-col justify-center md:pl-6 mt-6 md:mt-0">
-        <h2 className="text-sm text-gray-500 uppercase mb-2">
+        <h2 className="text-xl text-gray-500 uppercase mb-2">
           24/7 CUSTOMER SUPPORT
         </h2>
-        <h1 className="text-3xl font-bold mb-4">We're here for you</h1>
-        <p className="text-gray-600 mb-6">
+        <h1 className="text-4xl font-bold mb-6">We're here for you</h1>
+        <p className="text-xl mb-6">
           Any change in delivery times or date, or if something goes wrong, we
           are here. Our online customer support team will assist you day and
           night.
         </p>
-        <button className="flex items-center bg-blue-500 text-white px-4 w-[25%] py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+        <button className="flex items-center bg-blue-500 text-white px-4 w-full sm:w-[50%] md:w-[25%] py-2 rounded-lg hover:bg-blue-600 transition duration-300">
           <FaRegComment className="mr-2" />
           Chat with us
         </button>

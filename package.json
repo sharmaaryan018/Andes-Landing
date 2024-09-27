@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "locomotive-scroll": "^4.1.4",
+    "react-locomotive-scroll": "^0.2.2"
+  }
+}

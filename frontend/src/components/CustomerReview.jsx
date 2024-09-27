@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 const CustomerReviews = () => {
@@ -29,21 +30,20 @@ const CustomerReviews = () => {
   ];
   return (
     <div className="max-w-6xl mx-auto p-4 text-center">
-      <h2 className="text-3xl font-semibold mb-4">Our happy customers</h2>
+      <h2 className="text-4xl font-bold mb-6">Our Happy customers</h2>
       <p className="text-gray-600 mb-6">
         Rated excellent ★★★★★ by 500,000+ users
       </p>
       <a href="#" className="text-blue-600 underline mb-10 inline-block">
         Read more reviews
       </a>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8 justify-center">
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="bg-gray-50 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 mx-auto"
           >
-            <p className="text-gray-700 mb-4">{review.text}</p>
-            <div className="flex items-center mt-4">
+            <div className="flex items-center mt-4 justify-center">
               <img
                 src={review.imageUrl}
                 alt={review.name}
@@ -56,6 +56,7 @@ const CustomerReviews = () => {
                 </div>
               </div>
             </div>
+            <p className="text-gray-700 mt-4">{review.text}</p>
           </div>
         ))}
       </div>

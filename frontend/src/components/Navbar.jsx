@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,12 +9,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img
-              src="/api/placeholder/40/40"
-              alt="Andes logo"
-              className="mr-3 h-10 w-10"
-            />
+            <a href="/">
+              <img src={logo} alt="Andes logo" className="mr-3 h-10 w-10" />
+            </a>
+            <a href="/" >
             <span className="text-white text-2xl font-bold">Andes</span>
+            </a>
           </div>
 
           {/* Desktop menu */}

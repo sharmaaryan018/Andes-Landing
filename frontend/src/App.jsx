@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar /> {/* Navbar stays at the top of all pages */}
-        <div className="flex-grow">
+        <div className="flex-grow scroll-container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />

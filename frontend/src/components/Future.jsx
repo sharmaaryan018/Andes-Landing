@@ -1,4 +1,4 @@
-import React from "react";
+import future from "../assets/aboutus.jpeg";
 
 const Future = () => {
   return (
@@ -7,7 +7,7 @@ const Future = () => {
         <div className="relative w-full md:w-1/2">
           <div className="overflow-hidden rounded-full md:rounded-xl">
             <img
-              src="path-to-your-image"
+              src={future}
               alt="Laundry Service"
               className="w-full h-full object-cover"
             />

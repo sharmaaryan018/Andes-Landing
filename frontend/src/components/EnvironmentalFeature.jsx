@@ -27,7 +27,7 @@ const EnvironmentalFeature = ({
           {buttonText}
         </button>
       </div>
-      <div className="md:w-1/2 mt-8 ml-36 md:mt-0">
+      <div className="md:w-1/2 mt-8 ml-36 md:mt-0 hidden md:block">
         <img
           src={imageSrc}
           alt="feature"
