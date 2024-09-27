@@ -9,13 +9,14 @@ import BookNow from "../components/BookNow.jsx";
 import TeamSection from "../components/TeamSection.jsx";
 import Serviceinfo from "../components/Serviceinfo.jsx";
 import ServiceFeatures from "../components/ServiceFeatures.jsx";
+import MyFooter from "../components/MyFooter.jsx";
 
 const LandingPage = () => {
   return (
-  <div>
+    <div>
       {/* Hero Section */}
-      <div className="bg-blue-500 min-h-screen flex justify-center items-center">
-        <main className="container mx-auto px-4 pt-10 md:pt-24 flex flex-col md:flex-row items-center">
+      <div className="bg-blue-500 min-h-screen flex justify-center items-center pt-16 md:pt-24">
+        <main className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           {/* Text Section */}
           <div className="md:w-1/2 text-white md:ml-16 mb-12 md:mb-0 md:pr-8">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 leading-tight">
@@ -72,6 +73,7 @@ const LandingPage = () => {
         <BookNow />
         <TeamSection />
       </section>
+      <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
@@ -7,13 +6,31 @@ import ServicesPage from "./pages/ServicesPage";
 import Working from "./pages/Working";
 import MyFooter from "./components/MyFooter";
 import SocietyForm from "./pages/SocietyForm";
+import "./locomotive-scroll.css";
+import { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+    });
+
+    return () => {
+      if (scroll) {
+        scroll.destroy();
+      }
+    };
+  }, []);
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar /> {/* Navbar stays at the top of all pages */}
-        <div className="flex-grow scroll-container">
+        <div ref={scrollRef} className="flex-grow scroll-container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -22,7 +39,6 @@ function App() {
             <Route path="/book-now" element={<SocietyForm />} />
           </Routes>
         </div>
-        <MyFooter /> {/* Footer stays at the bottom of the page */}
       </div>
     </Router>
   );

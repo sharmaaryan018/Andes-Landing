@@ -1,6 +1,6 @@
-import React from "react";
 import PricingSection from "../components/PricingSection";
 import PricingCard from "../components/PricingCard";
+import MyFooter from "../components/MyFooter";
 
 const data = [
   {
@@ -81,7 +81,7 @@ const data = [
 
 const ServicesPage = () => {
   return (
-    <div>
+    <div >
       <PricingSection />
       <div className="bg-gray-100 min-h-screen flex flex-col items-center py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
@@ -90,6 +90,7 @@ const ServicesPage = () => {
           ))}
         </div>
       </div>
+      <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );
 };

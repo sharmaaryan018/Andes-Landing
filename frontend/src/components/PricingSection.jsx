@@ -1,6 +1,6 @@
-import React from "react";
-import freeDeliveryIcon from "../assets/fold.jpeg";
-
+import freeDeliveryIcon from "../assets/freedelivery.svg";
+import moneyicon from "../assets/moneyicon.svg";
+import serviceicon from "../assets/serviceicon.svg";
 const PricingSection = () => {
   return (
     <section className="bg-blue-500 text-white py-24">
@@ -27,7 +27,7 @@ const PricingSection = () => {
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 mb-2">
               <img
-                src={freeDeliveryIcon}
+                src={moneyicon}
                 alt="Minimum order"
                 className="w-full h-full object-contain"
               />
@@ -39,7 +39,7 @@ const PricingSection = () => {
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 mb-2">
               <img
-                src={freeDeliveryIcon}
+                src={serviceicon}
                 alt="Service fee"
                 className="w-full h-full object-contain"
               />

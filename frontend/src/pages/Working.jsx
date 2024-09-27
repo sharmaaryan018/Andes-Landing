@@ -1,4 +1,3 @@
-import React from "react";
 import FeatureLeft from "../components/FeatureLeft";
 import FeatureRight from "../components/FeatureRight";
 import EnvironmentalFeature from "../components/EnvironmentalFeature";
@@ -10,7 +9,7 @@ import card1 from "../assets/card1.jpg";
 import card2 from "../assets/card2.jpg";
 import card3 from "../assets/card3.jpg";
 import card4 from "../assets/card4.png";
-
+import MyFooter from "../components/MyFooter";
 
 const bulletPoints = [
   { icon: "🔗", text: "Book online or with our mobile app" },
@@ -69,6 +68,7 @@ const Working = () => {
 
       <CustomerStories />
       <Schedule />
+      <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );
 };
