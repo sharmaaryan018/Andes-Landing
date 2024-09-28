@@ -10,8 +10,8 @@ const FeatureRight = ({ title, subtitle, description, imageSrc, bulletPoints }) 
         <p className="text-gray-700 mb-6">{description}</p>
         <ul>
           {bulletPoints.map((point, index) => (
-            <li key={index} className="flex items-center mb-2">
-              <span className="bg-blue-100 text-blue-700 p-2 rounded-full mr-3">
+            <li key={index} className="flex items-center mb-4">
+              <span className="bg-blue-100 text-blue-700 p-2 rounded-full mr-4">
                 {/* You can replace this with an actual icon */}
                 {point.icon}
               </span>
@@ -20,8 +20,8 @@ const FeatureRight = ({ title, subtitle, description, imageSrc, bulletPoints }) 
           ))}
         </ul>
       </div>
-      <div className="md:w-1/2">
-        <img src={imageSrc} alt="feature" className="w-full h-auto object-cover" />
+      <div className="hidden md:block md:w-1/2 m-4">
+        <img src={imageSrc} alt="feature" className="w-full h-auto object-cover rounded-lg" />
       </div>
     </div>
   );

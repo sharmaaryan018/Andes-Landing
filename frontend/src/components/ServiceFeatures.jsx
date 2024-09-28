@@ -1,4 +1,3 @@
-import React from "react";
 import { FaTshirt, FaWater, FaTruck } from "react-icons/fa";
 
 const ServiceFeatures = () => {

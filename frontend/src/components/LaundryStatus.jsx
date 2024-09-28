@@ -6,7 +6,7 @@ const LaundryStatus = () => {
   return (
     <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4">
       {/* Left Section */}
-      <div className="md:w-1/2 pr-6 flex flex-col justify-center pl-40">
+      <div className="md:w-1/2 pr-6 flex flex-col justify-center ">
         <h2 className="text-xl text-gray-500 uppercase mb-2">
           24H TURNAROUND TIME
         </h2>
@@ -16,7 +16,7 @@ const LaundryStatus = () => {
             <div className="bg-yellow-100 rounded-full p-3 mr-4">
               <FaShoppingBag className="h-8 w-8 text-yellow-500" />
             </div>
-            <span className="text-xl">Schedule a collection today</span>
+            <span className="text-2xl">Schedule a collection today</span>
           </div>
           <div className="flex items-center">
             <div className="bg-yellow-100 rounded-full p-3 mr-4">

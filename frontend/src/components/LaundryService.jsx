@@ -1,6 +1,7 @@
 import React from "react";
 import { FaTshirt, FaWater, FaFile } from "react-icons/fa"; // Importing icons from react-icons
 import fold from "../assets/fold.jpeg";
+
 const LaundryService = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen p-6 bg-[#f5f5f5] rounded-lg shadow-lg">
@@ -9,9 +10,25 @@ const LaundryService = () => {
         <img
           src={fold}
           alt="Woman examining clothes"
-          className="w-[50%] h-[50%] rounded-lg mb-4 ml-48"
+          className="w-full h-[720px] object-cover rounded-lg mb-4"
         />
-        <div className="bg-[#f5f5f5] p-4 rounded-lg">
+      </div>
+
+      {/* Text Section */}
+      <div className="md:w-1/2 pl-4 mt-4 md:mt-0 flex flex-col justify-center">
+        <h2 className="text-xl text-gray-500 uppercase mb-2">
+          Freedom from Laundry
+        </h2>
+        <h1 className="text-4xl font-bold mb-6">
+          A laundry service designed for you
+        </h1>
+        <p className="text-xl mb-6">
+          Never worry about staining your favorite shirt. We offer laundry, dry
+          cleaning, and ironing at a schedule that fits your lifestyle.
+        </p>
+        
+        {/* New Section */}
+        <div className="bg-[#f5f5f5]  rounded-lg">
           <h3 className="font-semibold text-lg mb-2">
             Any special cleaning instructions for us?
           </h3>
@@ -48,23 +65,6 @@ const LaundryService = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Text Section */}
-      <div className="md:w-1/2 pl-4 mt-4 md:mt-0 flex flex-col justify-center">
-        <h2 className="text-sm uppercase text-gray-500 mb-2">
-          Freedom from Laundry
-        </h2>
-        <h1 className="text-3xl font-bold mb-4">
-          A laundry service designed for you
-        </h1>
-        <p className="text-gray-600 mb-4">
-          Never worry about staining your favorite shirt. We offer laundry, dry
-          cleaning, and ironing at a schedule that fits your lifestyle.
-        </p>
-        <a href="#" className="text-blue-500 hover:underline">
-          See how it works
-        </a>
       </div>
     </div>
   );
