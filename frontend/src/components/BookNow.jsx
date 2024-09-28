@@ -2,7 +2,7 @@ import React from "react";
 
 const BookNow = () => {
   return (
-    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20">
+    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20 mt-4 mb-4">
       <h2 className="text-2xl md:text-3xl font-semibold text-blue-900 mb-6">
         Book now. Smile away. Everyday.
       </h2>

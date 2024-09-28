@@ -2,7 +2,7 @@ import React from "react";
 
 const QuickCleanFresh = () => {
   return (
-    <div className="relative bg-[#3B82F6] pt-32 pb-24">
+    <div className="relative bg-[#3B82F6] pt-32 pb-24 mt-16 mb-16">
       {/* Curved Background */}
       {/* <div className="absolute inset-x-0 top-0 transform -translate-y-1/2">
         <svg viewBox="0 0 1440 320" className="w-full">
@@ -16,7 +16,7 @@ const QuickCleanFresh = () => {
 
       {/* Text and Button */}
       <div className="relative text-center max-w-xl mx-auto justify-center flex-col flex">
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Quick. Clean. Fresh.
         </h2>
         <p className="text-lg md:text-xl text-white mb-10">
