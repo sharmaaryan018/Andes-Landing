@@ -1,4 +1,5 @@
 import React from "react";
+import playstore from "../assets/playstoreicon.svg";
 
 const AppPromo = () => {
   return (
@@ -19,32 +20,26 @@ const AppPromo = () => {
           easy-to-use website or mobile app.
         </p>
         <div className="bg-blue-100 p-4 rounded-lg flex items-center">
-          <div className="mr-6">
-            <p className="text-lg font-semibold text-blue-800 mb-2">
-              Get the app
-            </p>
-            <div className="flex space-x-4">
-              <img
-                src="/path/to/appstore.png"
-                alt="App Store"
-                className="w-32 h-auto"
-              />
-              <img
-                src="/path/to/playstore.png"
-                alt="Google Play"
-                className="w-32 h-auto"
-              />
+          <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            <img
+              src={playstore}
+              alt="App Store"
+              className="w-16 h-auto ml-4"
+            />
+            <div className="mr-6 ml-6">
+              <p className="text-lg font-semibold text-blue-800 mb-2">
+                Download Andes
+              </p>
+              <p className="text-sm text-blue-800">at Playstore</p>
             </div>
-          </div>
+          </a>
           <img
             src="/path/to/qr-code.png"
             alt="QR Code"
-            className="w-24 h-24 ml-auto"
+            className="w-20 h-20 ml-auto"
           />
         </div>
       </div>
-
-      {/* Right Section */}
       <div className="lg:w-1/2 flex justify-center lg:justify-end">
         <img
           src="/path/to/app-preview.png"

@@ -2,12 +2,12 @@ import ItemCard from "./ItemCard.jsx";
 import { FaRegComment } from "react-icons/fa";
 
 const Services = () => (
-  <div className="bg-blue-700 text-white py-12 px-4">
+  <div className="bg-blue-700 text-white py-12 px-4 transition-all duration-300 ease-in-out">
     <h2 className="text-3xl font-bold text-center mb-2">Explore our services</h2>
     <p className="text-center mb-8">We handle your clothes with care, giving them the attention they deserve.</p>
     <div className="flex justify-center gap-4 mb-8">
-      <button className="bg-white text-blue-700 px-4 py-2 rounded">See price list</button>
-      <button className="bg-transparent border border-white px-4 py-2 rounded flex items-center gap-2">
+      <button className="bg-white text-blue-700 px-4 py-2 rounded hover:bg-blue-700 hover:text-white hover:border hover:border-white transition-all duration-300 ease-in-out">See price list</button>
+      <button className="bg-transparent border border-white px-4 py-2 rounded flex items-center gap-2 hover:border-white hover:bg-white hover:text-blue-700 transition-all duration-300 ease-in-out">
         <FaRegComment size={20} />
         Ask us anything
       </button>
