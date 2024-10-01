@@ -1,12 +1,14 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers, faMapMarkerAlt, faLeaf } from "@fortawesome/free-solid-svg-icons";
 
 const WhoWeAre = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center p-6 lg:p-12 bg-white">
       {/* Text Section */}
       <div className="flex-1 mb-6 pt-14 lg:mb-0 lg:mr-10">
-        <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-gray-800">
-          Who We Are
+        <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+          <FontAwesomeIcon icon={faUsers} className="mr-6" />
+          Who We Are ?
         </h2>
         <p className="text-lg lg:text-xl mb-6 leading-relaxed text-gray-600">
           Andes is the #1 fastest and safest on-demand laundry service platform.
@@ -18,7 +20,8 @@ const WhoWeAre = () => {
         </p>
         {/* Subsection: Current Availability */}
         <div className="mb-6">
-          <h3 className="text-2xl lg:text-3xl font-semibold mb-2 text-gray-700">
+          <h3 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-6" />
             Currently Available in Pune
           </h3>
           <p className="text-base lg:text-lg leading-relaxed text-gray-600">
@@ -31,7 +34,8 @@ const WhoWeAre = () => {
         </div>
         {/* Subsection: Environmental Protection */}
         <div className="mb-6">
-          <h3 className="text-2xl lg:text-3xl font-semibold mb-2 text-gray-700">
+          <h3 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+            <FontAwesomeIcon icon={faLeaf} className="mr-6" />
             We Protect Our Environment
           </h3>
           <p className="text-base lg:text-lg leading-relaxed text-gray-600">

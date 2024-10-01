@@ -91,7 +91,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? "block" : "hidden"} md:hidden mt-4`}>
+        <div
+          className={`${isOpen ? "block" : "hidden"} md:hidden mt-4 space-y-4`}
+        >
           <a
             href="/working"
             className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
@@ -111,7 +113,7 @@ const Navbar = () => {
           <a
             href="/andes-assured"
             className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/andes-assured") ? "bg-blue-600 underline" : ""
+              isActive("/andes-assured") ? "bg-blue-600" : ""
             }`}
           >
             Andes Assured
@@ -126,8 +128,8 @@ const Navbar = () => {
           </a>
           <a
             href="/book-now"
-            className={`bg-white text-blue-500 px-2 py-1 rounded-full font-semibold mt-2 hover:bg-gray-100 transition duration-300 ${
-              isActive("/book-now") ? "bg-gray-100" : ""
+            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
+              isActive("/book-now") ? "bg-blue-600" : ""
             }`}
           >
             Book now
