@@ -1,33 +1,68 @@
-import React from 'react';
+import Aryan from '../assets/AryanGupta.png';
+import Prakhar from '../assets/PrakharParashar.jpg';
+import Yash from '../assets/YashTekavade.jpeg';
+import Margi from '../assets/MargiYadav.jpg';
+import John from '../assets/JohnThomas.jpg';
+import Kushal from '../assets/KushalGupta.jpeg';
+import Vaibhav from '../assets/VaibhavSharma.jpg';
+import Sumith from '../assets/Sumith.jpg';
+import Mayur from '../assets/mayur.png';
+import Saubhagya from '../assets/Saubhagya.png';
 
 const teamMembers = [
-  'team-member-1.jpg', // Replace with actual image paths
-  'team-member-2.jpg',
-  'team-member-3.jpg',
-  'team-member-4.jpg',
-  'team-member-5.jpg',
+  { src: Aryan, name: "Aryan Gupta", title: "Founder and CEO" },
+  { src: Saubhagya, name: "Saubhagya Singh" },
+  { src: Prakhar, name: "Prakhar Parashar" },
+  { src: Yash, name: "Yash Tekavade" },
+  { src: Mayur, name: "Mayur Behere" },
+  { src: Margi, name: "Margi Yadav" },
+  { src: John, name: "John Thomas" },
+  { src: Kushal, name: "Kushal Gupta" },
+  { src: Vaibhav, name: "Vaibhav Sharma" },
+  { src: Sumith, name: "Sumith" },
 ];
 
 const TeamSection = () => {
   return (
-    <div className="bg-blue-900 text-white py-16">
+    <div className="bg-blue-900 text-white py-12">
       <div className="text-center mb-12">
-        <div className="text-xl font-bold">Meet the team</div>
-        <p className="mt-2 p-4">
+        <h2 className="text-3xl font-bold">Meet the Team</h2>
+        <p className="mt-4 px-4 max-w-2xl mx-auto">
           We're a global team of laundry, tech, and logistics experts on a mission to free people
-          from laundry so that they can spend more time doing what they <span className="text-yellow-400">💛</span>
+          from laundry so that they can spend more time doing what they <span className="text-yellow-400">💛</span>.
         </p>
-        <p className="mt-1 font-semibold">TEAM ANDES</p>
+        <p className="mt-2 font-semibold text-lg">TEAM ANDES</p>
       </div>
 
-      <div className="flex justify-center gap-6 flex-wrap">
-        {teamMembers.map((image, index) => (
-          <div key={index} className="relative w-48 h-48 overflow-hidden">
-            <img
-              src={image}
-              alt={`Team member ${index + 1}`}
-              className="w-full h-full object-cover rounded-full"
-            />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+        {teamMembers.map((member, index) => (
+          <div
+            key={index}
+            className={`relative w-48 h-48 overflow-hidden mx-auto ${
+              index === 0 ? 'md:col-span-3' : ''
+            }`}
+          >
+            <div className="relative group">
+              <img
+                src={member.src}
+                alt={member.name}
+                className="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
+                <span className="text-white text-center">
+                  {member.name}
+                  {member.title && (
+                    <span className="block text-sm">{member.title}</span>
+                  )}
+                </span>
+              </div>
+            </div>
+            <div className="mt-4 text-center">
+              <span className="block font-bold">{member.name}</span>
+              {member.title && (
+                <span className="block text-sm">{member.title}</span>
+              )}
+            </div>
           </div>
         ))}
       </div>
