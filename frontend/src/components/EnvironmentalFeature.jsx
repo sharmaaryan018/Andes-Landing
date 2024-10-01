@@ -31,7 +31,7 @@ const EnvironmentalFeature = ({
         <img
           src={imageSrc}
           alt="feature"
-          className="w-[75%] h-auto object-cover"
+          className="w-[90%] h-auto object-cover"
         />
       </div>
     </div>

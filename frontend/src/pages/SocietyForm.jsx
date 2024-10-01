@@ -105,7 +105,7 @@ const SocietyForm = () => {
           </form>
         </div>
 
-        <div className="md:w-1/2 w-full flex justify-center items-center p-6">
+        <div className="md:w-1/2 w-full flex justify-center items-center p-6 hidden md:block">
           <img
             src="https://via.placeholder.com/500" // Replace with your image URL
             alt="Form Illustration"

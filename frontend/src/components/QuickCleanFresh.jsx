@@ -1,4 +1,3 @@
-import React from "react";
 
 const QuickCleanFresh = () => {
   return (
@@ -22,8 +21,7 @@ const QuickCleanFresh = () => {
         <p className="text-lg md:text-xl text-white mb-10">
           Your laundry delivered in 24h
         </p>
-        <button className="bg-white mt-8 text-[#3B82F6] font-semibold rounded-lg shadow-md flex items-center justify-center h-12 w-auto hover:bg-gray-100 transition">
-          <span>
+        <button className="bg-white mt-8 text-[#3B82F6] font-semibold rounded-lg shadow-md flex items-center justify-center h-12 w-auto hover:bg-gray-100 transition max-w-full md:max-w-none">          <span>
             {/* Icon or SVG for the button */}
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,12 +1,18 @@
-import React from "react";
 
 const BookNow = () => {
+  const handleButtonClick = () => {
+    window.location.href = 'https://play.google.com/store';
+  };
+
   return (
     <div className="bg-yellow-200 flex flex-col items-center justify-center py-20 mt-4 mb-4">
-      <h2 className="text-2xl md:text-3xl font-semibold text-blue-900 mb-6">
+      <h2 className="text-2xl md:text-3xl font-semibold text-blue-900 mb-6 px-4 md:px-0">
         Book now. Smile away. Everyday.
       </h2>
-      <button className="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-100 transition">
+      <button
+        onClick={handleButtonClick}
+        className="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-100 transition self-start md:self-center ml-3 md:ml-0"
+      >
         <span>
           {/* Icon or SVG for the button */}
           <svg

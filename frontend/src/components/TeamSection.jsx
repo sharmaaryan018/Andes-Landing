@@ -13,11 +13,11 @@ const TeamSection = () => {
     <div className="bg-blue-900 text-white py-16">
       <div className="text-center mb-12">
         <div className="text-xl font-bold">Meet the team</div>
-        <p className="mt-2">
+        <p className="mt-2 p-4">
           We're a global team of laundry, tech, and logistics experts on a mission to free people
           from laundry so that they can spend more time doing what they <span className="text-yellow-400">💛</span>
         </p>
-        <p className="mt-1 font-semibold">TEAM LAUNDRYHEAP</p>
+        <p className="mt-1 font-semibold">TEAM ANDES</p>
       </div>
 
       <div className="flex justify-center gap-6 flex-wrap">
