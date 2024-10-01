@@ -1,59 +1,65 @@
-import { FaRegComment } from "react-icons/fa";
-import support from "../assets/customersupport.jpeg";
+import { FaClock, FaShoppingBag } from "react-icons/fa";
+import support from "../assets/customersupport.jpeg"; // Assuming the image is named support.jpeg
 
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg h-screen">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 mb-4">
       {/* Left Section */}
-      <div className="md:w-1/2 relative flex justify-center items-center">
-        <img
-          src={support}
-          alt="Customer support representative"
-          className="w-full h-[100%] rounded-lg object-cover"
-        />
-        <div className="absolute top-6 left-6 bg-white p-4 rounded-lg shadow-md max-w-xs w-full">
-          <div className="bg-blue-500 p-3 rounded-t-lg text-white flex items-center">
-            <img
-              src="/api/placeholder/40/40"
-              alt="Peter Sullivan"
-              className="w-10 h-10 rounded-full mr-3"
-            />
-            <div>
-              <p className="font-semibold">Peter Sullivan</p>
-              <p className="text-sm">Laundryheap Support</p>
+      <div className="md:w-1/2 pr-6 flex flex-col justify-center">
+        <h2 className="text-xl text-gray-500 uppercase mb-2">
+          24H CUSTOMER SUPPORT
+        </h2>
+        <h1 className="text-3xl font-semibold md:text-4xl md:font-bold mb-6">We're here to help you</h1>
+        <div className="space-y-4">
+          <div className="flex items-center">
+            <div className="bg-yellow-100 rounded-full p-3 mr-4">
+              <FaShoppingBag className="h-8 w-8 text-yellow-500" />
             </div>
+            <span className="text-xl md:text-2xl">Reach out to us anytime</span>
           </div>
-          <div className="p-3 space-y-3">
-            <div className="bg-yellow-100 p-2 rounded-lg">
-              <p className="text-sm">
-                Hi, can I reschedule today's delivery to Thursday please?
-              </p>
+          <div className="flex items-center">
+            <div className="bg-yellow-100 rounded-full p-3 mr-4">
+              <FaClock className="h-8 w-8 text-yellow-500" />
             </div>
-            <div className="bg-blue-100 p-2 rounded-lg">
-              <p className="text-sm">
-                Hey, of course 👍. You will receive confirmation via email.
-              </p>
-            </div>
-            <p className="text-xs text-gray-500">Just now</p>
+            <span className="text-xl md:text-2xl">We're available 24/7</span>
           </div>
         </div>
       </div>
-
       {/* Right Section */}
-      <div className="md:w-1/2 flex flex-col justify-center md:pl-6 mt-6 md:mt-0">
-        <h2 className="text-xl text-gray-500 uppercase mb-2">
-          24/7 CUSTOMER SUPPORT
-        </h2>
-        <h1 className="text-4xl font-bold mb-6">We're here for you</h1>
-        <p className="text-xl mb-6">
-          Any change in delivery times or date, or if something goes wrong, we
-          are here. Our online customer support team will assist you day and
-          night.
-        </p>
-        <button className="flex items-center bg-blue-500 text-white px-4 w-full sm:w-[50%] md:w-[25%] py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-          <FaRegComment className="mr-2" />
-          Chat with us
-        </button>
+      <div className="md:w-1/2 mt-6 md:mt-0 relative hidden md:block">
+        <div className="relative">
+          <img
+            src={support}
+            alt="Customer support representative"
+            className="w-full h-auto object-cover rounded-lg"
+          />
+          <div className="absolute top-6 left-6 bg-white p-4 rounded-lg shadow-md max-w-xs w-full">
+            <div className="bg-blue-500 p-3 rounded-t-lg text-white flex items-center">
+              <img
+                src="/api/placeholder/40/40"
+                alt="Peter Sullivan"
+                className="w-10 h-10 rounded-full mr-3"
+              />
+              <div>
+                <p className="font-semibold">Peter Sullivan</p>
+                <p className="text-sm">Customer Support</p>
+              </div>
+            </div>
+            <div className="p-3 space-y-3">
+              <div className="bg-yellow-100 p-2 rounded-lg">
+                <p className="text-sm">
+                  Hi, I need help with my recent order.
+                </p>
+              </div>
+              <div className="bg-blue-100 p-2 rounded-lg">
+                <p className="text-sm">
+                  Sure, I'm here to assist you. Please provide more details.
+                </p>
+              </div>
+              <p className="text-xs text-gray-500">Just now</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

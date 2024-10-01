@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
 const MyFooter = () => {
   return (
@@ -7,47 +7,86 @@ const MyFooter = () => {
         {/* Upper Section */}
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-6 mb-6">
           <nav className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center md:text-left">
-            <a href="#book-now" className="hover:text-blue-400">Book now</a>
-            <a href="#how-it-works" className="hover:text-blue-400">How it works</a>
-            <a href="#pricing" className="hover:text-blue-400">Pricing</a>
-            <a href="#about-us" className="hover:text-blue-400">About us</a>
+            <Link to="/book-now" className="hover:text-blue-400">
+              Book now
+            </Link>
+            <Link to="/working" className="hover:text-blue-400">
+              How it works
+            </Link>
+            <Link to="/services" className="hover:text-blue-400">
+              Pricing
+            </Link>
+            <Link to="/about" className="hover:text-blue-400">
+              About us
+            </Link>
           </nav>
           <p className="text-gray-400 text-sm mt-4 md:mt-0 text-center md:text-left">
-            <a href="#terms" className="hover:text-blue-400">Terms & Conditions</a>, 
-            <a href="#privacy" className="hover:text-blue-400"> Privacy Policy</a>, 
-            <a href="#contact" className="hover:text-blue-400"> Contact</a>
+            <a href="#terms" className="hover:text-blue-400">
+              Terms & Conditions
+            </a>
+            ,
+            <a href="#privacy" className="hover:text-blue-400">
+              {" "}
+              Privacy Policy
+            </a>
+            ,
+            <a href="#contact" className="hover:text-blue-400">
+              {" "}
+              Contact
+            </a>
           </p>
         </div>
 
         {/* Middle Section */}
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <form className="flex justify-center items-center space-x-2">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
+            <input
+              type="email"
+              placeholder="Your email address"
               className="px-4 py-2 w-full max-w-sm bg-white text-black rounded-full focus:outline-none"
             />
-            <button 
-              type="submit" 
-              className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-6 rounded-full">
+            <button
+              type="submit"
+              className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-6 rounded-full"
+            >
               Subscribe
             </button>
           </form>
-        </div>
+        </div> */}
 
         {/* Social Links */}
         <div className="flex justify-center space-x-8 mb-8">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-500"
+          >
+            <i className="fab fa-instagram"></i> Mail
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-500"
+          >
             <i className="fab fa-instagram"></i> Instagram
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-500"
+          >
             <i className="fab fa-linkedin"></i> Linkedin
           </a>
-          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500">
+          <a
+            href="https://whatsapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-500"
+          >
             <i className="fab fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-500">
-            <i className="fab fa-youtube"></i> YouTube
           </a>
         </div>
 

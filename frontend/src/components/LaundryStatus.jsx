@@ -1,4 +1,3 @@
-import React from "react";
 import { FaClock, FaShoppingBag } from "react-icons/fa";
 import clothcarryingman from "../assets/clothcarryingman.jpeg";
 
@@ -10,24 +9,24 @@ const LaundryStatus = () => {
         <h2 className="text-xl text-gray-500 uppercase mb-2">
           24H TURNAROUND TIME
         </h2>
-        <h1 className="text-4xl font-bold mb-6">No need to plan in advance</h1>
+        <h1 className="text-3xl font-semibold md:text-4xl md:font-bold mb-6">No need to plan in advance</h1>
         <div className="space-y-4">
           <div className="flex items-center">
             <div className="bg-yellow-100 rounded-full p-3 mr-4">
               <FaShoppingBag className="h-8 w-8 text-yellow-500" />
             </div>
-            <span className="text-2xl">Schedule a collection today</span>
+            <span className="text-xl md:text-2xl">Schedule a collection today</span>
           </div>
           <div className="flex items-center">
             <div className="bg-yellow-100 rounded-full p-3 mr-4">
               <FaClock className="h-8 w-8 text-yellow-500" />
             </div>
-            <span className="text-2xl">Get your laundry back in 24h</span>
+            <span className="text-xl md:text-2xl">Get your laundry back in 24h</span>
           </div>
         </div>
       </div>
       {/* Right Section */}
-      <div className="md:w-1/2 mt-6 md:mt-0 relative">
+      <div className="md:w-1/2 mt-6 md:mt-0 relative hidden md:block">
         <div className="relative">
           <img
             src={clothcarryingman}

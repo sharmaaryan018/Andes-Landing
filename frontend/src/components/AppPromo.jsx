@@ -1,4 +1,3 @@
-import React from "react";
 import playstore from "../assets/playstoreicon.svg";
 
 const AppPromo = () => {
@@ -30,17 +29,12 @@ const AppPromo = () => {
               <p className="text-lg font-semibold text-blue-800 mb-2">
                 Download Andes
               </p>
-              <p className="text-sm text-blue-800">at Playstore</p>
+              <p className="text-sm text-blue-800">from Playstore</p>
             </div>
           </a>
-          <img
-            src="/path/to/qr-code.png"
-            alt="QR Code"
-            className="w-20 h-20 ml-auto"
-          />
         </div>
       </div>
-      <div className="lg:w-1/2 flex justify-center lg:justify-end">
+      <div className="lg:w-1/2 flex justify-center lg:justify-end hidden ">
         <img
           src="/path/to/app-preview.png"
           alt="App Preview"
