@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,16 +9,14 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-transparent backdrop-blur-md py-4 fixed w-full top-0 z-50 shadow-md">
+    <nav className="bg-transparent backdrop-blur-md py-2 fixed w-full top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/">
-              <img src={logo} alt="Andes logo" className="mr-3 h-10 w-10" />
+              <img src={logo} alt="Andes logo" className="mr-3 h-20 w-20" />
             </a>
-            <a href="/">
-              <span className="text-gray-900 text-2xl font-bold">Andes</span>
-            </a>
+            <a href="/"></a>
           </div>
 
           {/* Desktop menu */}

@@ -3,7 +3,7 @@ import support from "../assets/customersupport.jpeg"; // Assuming the image is n
 
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 h-screen">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 md:h-screen">
       {/* Left Section */}
       <div className="md:w-1/2 pr-6 flex flex-col justify-center">
         <h2 className="text-xl text-gray-500 uppercase mb-2">

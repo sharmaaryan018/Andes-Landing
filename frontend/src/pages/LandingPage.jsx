@@ -38,20 +38,20 @@ const LandingPage = () => {
 
             {/* Typewriter text with fixed height and left alignment */}
             <h1
-              className="text-3xl sm:text-4xl md:text-4xl font-bold text-yellow-300 mb-8 typing text-left"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-300 mb-8 typing text-left"
               style={{
                 minWidth: "300px", // Set minimum width to the largest word length to avoid shifting
                 minHeight: "70px", // Set a fixed height to avoid vertical shifting
               }}
             >
-              {typewriterText}
+              {/* {typewriterText} */} Kothrud, Pune
             </h1>
 
             {/* Store links */}
             <div className="rounded-lg flex flex-row items-center mt-6 md:mb-4 space-x-4">
               <div className="flex items-center shadow-2xl p-2 md:p-4 rounded-lg">
                 <a
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.andes.laundry"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"
