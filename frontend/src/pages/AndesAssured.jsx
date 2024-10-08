@@ -9,7 +9,7 @@ import MyFooter from "../components/MyFooter";
 const AndesAssured = () => {
   return (
     <>
-      <div className="bg-gray-100 py-12 mt-9">
+      <div className="bg-gray-100 py-12 mt-12">
         <div className="container mx-auto px-6 md:px-12 md:pt-24 md:pb-24">
           <h1 className="text-4xl font-bold text-center text-blue-900 mb-12">
             What is Andes Assured?

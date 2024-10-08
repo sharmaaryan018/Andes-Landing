@@ -5,7 +5,7 @@ const WhoWeAre = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center p-6 lg:p-12 bg-white md:h-screen">
       {/* Text Section */}
-      <div className="flex-1 mb-6 pt-14 lg:mb-0 lg:mr-10">
+      <div className="flex-1 mb-6 pt-20 lg:mb-0 lg:mr-10">
         <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight text-blue-500">
           <FontAwesomeIcon icon={faUsers} className="mr-6" />
           Who We Are ?
