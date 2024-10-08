@@ -9,7 +9,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-blue-500 py-4 fixed w-full top-0 z-50 shadow-md">
+    <nav className="bg-transparent backdrop-blur-md py-4 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -17,7 +17,7 @@ const Navbar = () => {
               <img src={logo} alt="Andes logo" className="mr-3 h-10 w-10" />
             </a>
             <a href="/">
-              <span className="text-white text-2xl font-bold">Andes</span>
+              <span className="text-gray-900 text-2xl font-bold">Andes</span>
             </a>
           </div>
 
@@ -25,7 +25,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6">
             <a
               href="/working"
-              className={`text-white hover:text-gray-200 transition duration-300 ${
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
                 isActive("/working") ? "underline" : ""
               }`}
             >
@@ -33,7 +33,7 @@ const Navbar = () => {
             </a>
             <a
               href="/services"
-              className={`text-white hover:text-gray-200 transition duration-300 ${
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
                 isActive("/services") ? "underline" : ""
               }`}
             >
@@ -41,7 +41,7 @@ const Navbar = () => {
             </a>
             <a
               href="/andes-assured"
-              className={`text-white hover:text-gray-200 transition duration-300 ${
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
                 isActive("/andes-assured") ? "underline" : ""
               }`}
             >
@@ -49,7 +49,7 @@ const Navbar = () => {
             </a>
             <a
               href="/about"
-              className={`text-white hover:text-gray-200 transition duration-300 ${
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
                 isActive("/about") ? "underline" : ""
               }`}
             >
@@ -69,7 +69,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              className="text-gray-900 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -96,40 +96,40 @@ const Navbar = () => {
         >
           <a
             href="/working"
-            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/working") ? "bg-blue-600" : ""
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/working") ? "bg-blue-600 text-white" : ""
             }`}
           >
             How it works
           </a>
           <a
             href="/services"
-            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/services") ? "bg-blue-600" : ""
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/services") ? "bg-blue-600 text-white" : ""
             }`}
           >
             Services & Pricing
           </a>
           <a
             href="/andes-assured"
-            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/andes-assured") ? "bg-blue-600" : ""
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/andes-assured") ? "bg-blue-600 text-white" : ""
             }`}
           >
             Andes Assured
           </a>
           <a
             href="/about"
-            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/about") ? "bg-blue-600" : ""
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/about") ? "bg-blue-600 text-white" : ""
             }`}
           >
             About us
           </a>
           <a
             href="/book-now"
-            className={`block text-white py-2 hover:bg-blue-600 transition duration-300 ${
-              isActive("/book-now") ? "bg-blue-600" : ""
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/book-now") ? "bg-blue-600 text-white" : ""
             }`}
           >
             Book now

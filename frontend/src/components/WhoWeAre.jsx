@@ -3,14 +3,14 @@ import { faUsers, faMapMarkerAlt, faLeaf } from "@fortawesome/free-solid-svg-ico
 
 const WhoWeAre = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center p-6 lg:p-12 bg-white">
+    <div className="flex flex-col lg:flex-row items-center p-6 lg:p-12 bg-white md:h-screen">
       {/* Text Section */}
       <div className="flex-1 mb-6 pt-14 lg:mb-0 lg:mr-10">
-        <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+        <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight text-blue-500">
           <FontAwesomeIcon icon={faUsers} className="mr-6" />
           Who We Are ?
         </h2>
-        <p className="text-lg lg:text-xl mb-6 leading-relaxed text-gray-600">
+        <p className="text-base lg:text-lg mb-6 leading-relaxed text-gray-600">
           Andes is the #1 fastest and safest on-demand laundry service platform.
           You can schedule a laundry pickup with just a few taps, and we’ll take
           care of the rest. From pickup to cleaning, ironing, or dry cleaning to
@@ -20,11 +20,11 @@ const WhoWeAre = () => {
         </p>
         {/* Subsection: Current Availability */}
         <div className="mb-6">
-          <h3 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+          <h3 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight text-blue-500">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-6" />
             Currently Available in Pune
           </h3>
-          <p className="text-base lg:text-lg leading-relaxed text-gray-600">
+          <p className="text-sm lg:text-base leading-relaxed text-gray-600">
             We are an early-stage startup, starting in Pune with a vision to
             provide convenient, efficient, and reliable laundry services. While
             we are currently serving Pune, we are actively working to expand to
@@ -34,11 +34,11 @@ const WhoWeAre = () => {
         </div>
         {/* Subsection: Environmental Protection */}
         <div className="mb-6">
-          <h3 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight text-blue-500">
+          <h3 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight text-blue-500">
             <FontAwesomeIcon icon={faLeaf} className="mr-6" />
             We Protect Our Environment
           </h3>
-          <p className="text-base lg:text-lg leading-relaxed text-gray-600">
+          <p className="text-sm lg:text-base leading-relaxed text-gray-600">
             Social and environmental sustainability is at the heart of what we
             do. We are building the largest fleet of electric delivery vehicles
             and are committed to reducing water, electricity consumption, and
@@ -52,7 +52,7 @@ const WhoWeAre = () => {
         <img
           src="https://i.ibb.co/2vQyXv4/Screenshot-2024-10-01-223624.png"
           alt="Screenshot-2024-10-01-223624"
-          className="w-full md:max-h-screen md:pt-10 object-cover rounded-lg shadow-lg"
+          className="w-full md:max-h-96 md:pt-10 object-cover rounded-lg shadow-lg"
         />
       </div>
     </div>

@@ -3,13 +3,15 @@ import support from "../assets/customersupport.jpeg"; // Assuming the image is n
 
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 mb-4">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 h-screen">
       {/* Left Section */}
       <div className="md:w-1/2 pr-6 flex flex-col justify-center">
         <h2 className="text-xl text-gray-500 uppercase mb-2">
           24H CUSTOMER SUPPORT
         </h2>
-        <h1 className="text-3xl font-semibold md:text-4xl md:font-bold mb-6">We're here to help you</h1>
+        <h1 className="text-3xl font-semibold md:text-4xl md:font-bold mb-6">
+          We're here to help you
+        </h1>
         <div className="space-y-4">
           <div className="flex items-center">
             <div className="bg-yellow-100 rounded-full p-3 mr-4">
@@ -26,14 +28,14 @@ const CustomerSupport = () => {
         </div>
       </div>
       {/* Right Section */}
-      <div className="md:w-1/2 mt-6 md:mt-0 relative hidden md:block">
-        <div className="relative">
-          <img
-            src={support}
-            alt="Customer support representative"
-            className="w-full h-auto object-cover rounded-lg"
-          />
-          <div className="absolute top-6 left-6 bg-white p-4 rounded-lg shadow-md max-w-xs w-full">
+      <div className="md:w-1/2 mt-6 md:mt-0 relative flex flex-col justify-center items-center">
+        <img
+          src={support}
+          alt="Customer support representative"
+          className="hidden md:block md:w-96 md:h-96 object-cover rounded-lg mb-4"
+        />
+        <div className="flex justify-start items-center w-full">
+          <div className="md:absolute md:top-60 md:left-10 transform md:-translate-x-1/4 md:-translate-y-1/4 bg-white p-3 rounded-lg shadow-md max-w-xs w-full z-10">
             <div className="bg-blue-500 p-3 rounded-t-lg text-white flex items-center">
               <img
                 src="/api/placeholder/40/40"
@@ -45,7 +47,7 @@ const CustomerSupport = () => {
                 <p className="text-sm">Customer Support</p>
               </div>
             </div>
-            <div className="p-3 space-y-3">
+            <div className="p-3 space-y-2">
               <div className="bg-yellow-100 p-2 rounded-lg">
                 <p className="text-sm">
                   Hi, I need help with my recent order.
