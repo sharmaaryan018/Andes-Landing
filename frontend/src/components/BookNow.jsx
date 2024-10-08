@@ -5,7 +5,7 @@ const BookNow = () => {
   };
 
   return (
-    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20 mt-4 mb-4">
+    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20  ">
       <h2 className="text-2xl md:text-3xl font-semibold text-blue-900 mb-6 px-4 md:px-0">
         Book now. Smile away. Everyday.
       </h2>

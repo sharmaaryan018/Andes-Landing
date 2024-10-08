@@ -4,12 +4,12 @@ import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import Working from "./pages/Working";
-import MyFooter from "./components/MyFooter";
 import SocietyForm from "./pages/SocietyForm";
 import AndesAssured from "./pages/AndesAssured";
 import "./locomotive-scroll.css";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
+import Other from "./pages/Other";
 
 function App() {
   const scrollRef = useRef(null);
@@ -29,20 +29,23 @@ function App() {
   }, [location.pathname]); // Re-initialize on route change
 
   return (
-    <div ref={scrollRef} className="flex flex-col min-h-screen scroll-container">
-      <Navbar /> {/* Navbar stays at the top of all pages */}
-      <div className="flex-grow">
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/working" element={<Working />} />
-          <Route path="/book-now" element={<SocietyForm />} />
-          <Route path="/andes-assured" element={<AndesAssured />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
+    <>
+      <Navbar /> 
+      <div ref={scrollRef} className="flex flex-col min-h-screen scroll-container">
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/working" element={<Working />} />
+            <Route path="/book-now" element={<SocietyForm />} />
+            <Route path="/andes-assured" element={<AndesAssured />} />
+            <Route path="/other" element={<Other/>} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

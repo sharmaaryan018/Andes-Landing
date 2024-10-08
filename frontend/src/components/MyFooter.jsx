@@ -5,8 +5,8 @@ const MyFooter = () => {
     <footer className="bg-[#0A1321] text-white py-10">
       <div className="container mx-auto px-6 md:px-12">
         {/* Upper Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-6 mb-6">
-          <nav className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-center items-center border-b border-gray-600 pb-6 mb-6">
+          <nav className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-center">
             <Link to="/book-now" className="hover:text-blue-400">
               Book now
             </Link>
@@ -19,40 +19,20 @@ const MyFooter = () => {
             <Link to="/about" className="hover:text-blue-400">
               About us
             </Link>
-          </nav>
-          <p className="text-gray-400 text-sm mt-4 md:mt-0 text-center md:text-left">
-            <a href="#terms" className="hover:text-blue-400">
+            <Link to="/other" className="hover:text-blue-400">
               Terms & Conditions
-            </a>
-            ,
-            <a href="#privacy" className="hover:text-blue-400">
-              {" "}
+            </Link>
+            <Link to="/other" className="hover:text-blue-400">
               Privacy Policy
-            </a>
-            ,
-            <a href="#contact" className="hover:text-blue-400">
-              {" "}
+            </Link>
+            <Link to="/other" className="hover:text-blue-400">
               Contact
-            </a>
-          </p>
+            </Link>
+            <Link to="/other" className="hover:text-blue-400">
+              Return and Refund Policy
+            </Link>
+          </nav>
         </div>
-
-        {/* Middle Section */}
-        {/* <div className="text-center mb-8">
-          <form className="flex justify-center items-center space-x-2">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="px-4 py-2 w-full max-w-sm bg-white text-black rounded-full focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-6 rounded-full"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div> */}
 
         {/* Social Links */}
         <div className="flex justify-center space-x-8 mb-8">

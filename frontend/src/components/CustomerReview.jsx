@@ -6,25 +6,31 @@ const CustomerReviews = () => {
       name: "Rahul",
       text: "As a software engineer working long hours, Rahul found it hard to keep up with laundry. Our service saved him hours each week by offering quick pickups and doorstep deliveries, making life a lot easier.",
       rating: 5,
-      imageUrl: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
+      imageUrl:
+        "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
       source: "Google Reviews",
-      sourceImage: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
+      sourceImage:
+        "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
     },
     {
       name: "Priya",
       text: "Happy with the way the app works. Was able to do all the things I could get done on the website. Have used the wash and tumble dry service twice now and so far it's been fantastic; no delays with the pick up or drop off of the bags, no missing or damaged items. I'm very pleased with Laundryheap altogether.",
       rating: 4,
-      imageUrl: "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
+      imageUrl:
+        "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
       source: "Play Store",
-      sourceImage: "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
+      sourceImage:
+        "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
     },
     {
       name: "Amit",
       text: "This app is one of the best that I have navigated. It saves me the walking, parking, getting change, waiting to use a dryer in a launderette and folding of clothes. I'm glad I found it.",
       rating: 5,
-      imageUrl: "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
+      imageUrl:
+        "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
       source: "Google Reviews",
-      sourceImage: "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
+      sourceImage:
+        "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
     },
   ];
   return (
@@ -46,7 +52,7 @@ const CustomerReviews = () => {
               <img
                 src={review.imageUrl}
                 alt={review.name}
-                className="w-12 h-12 rounded-full mr-4"
+                className="w-16 h-16 rounded-full object-cover mr-4" // Change w-12 h-12 to w-16 h-16 and add object-cover
               />
               <div>
                 <h4 className="text-lg font-semibold">{review.name}</h4>
