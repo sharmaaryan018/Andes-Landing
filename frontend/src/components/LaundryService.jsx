@@ -3,7 +3,7 @@ import fold from "../assets/fold.jpeg";
 
 const LaundryService = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg h-screen">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg md:h-screen">
       {/* Text Section */}
       <div className="md:w-1/2 pr-4 mt-4 md:mt-0 flex flex-col justify-center md:pb-6">
         <h2 className="text-xl text-gray-500 uppercase mb-2">

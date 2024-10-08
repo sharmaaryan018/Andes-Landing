@@ -38,13 +38,13 @@ const LandingPage = () => {
 
             {/* Typewriter text with fixed height and left alignment */}
             <h1
-              className="text-3xl sm:text-4xl md:text-4xl font-bold text-yellow-300 mb-8 typing text-left"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-300 mb-8 typing text-left"
               style={{
                 minWidth: "300px", // Set minimum width to the largest word length to avoid shifting
                 minHeight: "70px", // Set a fixed height to avoid vertical shifting
               }}
             >
-              {typewriterText}
+              {/* {typewriterText} */} Kothrud, Pune
             </h1>
 
             {/* Store links */}
