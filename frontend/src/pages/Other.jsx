@@ -12,7 +12,7 @@ import MyFooter from "../components/MyFooter";
 const Other = () => {
 return (
     <>
-        <div className="container mx-auto p-6 md:p-12 md:mt-6 mt-10">
+        <div className="container mx-auto p-6 md:p-12 md:mt-6 mt-20">
             <h1 className="bg-blue-700 text-white text-4xl font-bold mb-8 text-center p-4 rounded underline">
                 Terms & Conditions
             </h1>
