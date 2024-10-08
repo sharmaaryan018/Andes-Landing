@@ -51,7 +51,7 @@ const LandingPage = () => {
             <div className="rounded-lg flex flex-row items-center mt-6 md:mb-4 space-x-4">
               <div className="flex items-center shadow-2xl p-2 md:p-4 rounded-lg">
                 <a
-                  href="https://play.google.com/store"
+                  href="https://play.google.com/store/apps/details?id=com.andes.laundry"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"

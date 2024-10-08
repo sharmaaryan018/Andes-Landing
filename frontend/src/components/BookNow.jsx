@@ -1,7 +1,7 @@
 
 const BookNow = () => {
   const handleButtonClick = () => {
-    window.location.href = 'https://play.google.com/store';
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.andes.laundry';
   };
 
   return (

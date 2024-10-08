@@ -19,7 +19,7 @@ const AppPromo = () => {
           easy-to-use website or mobile app.
         </p>
         <div className="bg-blue-100 p-4 rounded-lg flex items-center">
-          <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <a href="https://play.google.com/store/apps/details?id=com.andes.laundry" target="_blank" rel="noopener noreferrer" className="flex items-center">
             <img
               src={playstore}
               alt="App Store"
