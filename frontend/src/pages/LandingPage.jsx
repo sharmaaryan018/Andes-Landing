@@ -22,7 +22,7 @@ import card3 from "../assets/card3.png";
 import card4 from "../assets/card4.png";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Appsupport from "../components/Appsupport.jsx";
-import FAQ from "../components/FAQ.jsx";
+import FAQ from "../components/Faq.jsx";
 
 const bulletPoints1 = [
   { icon: "🔔", text: "Get notified when your order is ready for pick-up" },
