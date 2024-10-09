@@ -1,5 +1,5 @@
 import { FaClock, FaShoppingBag } from "react-icons/fa";
-import second from "../assets/second.jpg";
+import second from "../assets/card4.png";
 
 const LaundryStatus = () => {
   return (
@@ -33,40 +33,8 @@ const LaundryStatus = () => {
         <img
           src={second}
           alt="Man in coat carrying documents"
-          className="hidden md:block w-full md:w-full md:h-[500px] object-cover rounded-lg mb-4"        />
-        {/* <div className="flex justify-center items-center w-full md:justify-start pt-6 md:pt-0">
-          <div className="bg-white p-6 rounded-lg shadow-md max-w-xs w-full z-10 md:absolute md:top-60 md:left-0 md:transform md:-translate-x-1/4 md:-translate-y-1/4">
-            <div className="flex items-center mb-4">
-              <div className="bg-blue-500 rounded-full p-4 mr-4">
-                <svg
-                  className="h-10 w-10 text-white"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
-              <div>
-                <p className="text-lg text-gray-500">ORDER STATUS</p>
-                <p className="font-semibold text-blue-500 text-xl">Delivered</p>
-              </div>
-            </div>
-            <div className="space-y-2">
-              <div>
-                <p className="text-lg text-gray-500">BOOKED</p>
-                <p className="font-semibold text-xl">Yesterday, at 10 AM</p>
-              </div>
-              <div>
-                <p className="text-lg text-gray-500">DELIVERY</p>
-                <p className="font-semibold text-xl">Today, at 1 PM</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+          className="hidden md:block w-full h-500 object-cover rounded-lg"        />
+       
       </div>
     </div>
   );

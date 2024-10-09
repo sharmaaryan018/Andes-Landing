@@ -1,5 +1,5 @@
 import { FaClock, FaShoppingBag } from "react-icons/fa";
-import third from "../assets/third.jpg"; 
+import third from "../assets/card3.png"; 
 
 const CustomerSupport = () => {
   return (
@@ -9,7 +9,7 @@ const CustomerSupport = () => {
         <img
           src={third}
           alt="Customer support representative"
-          className="hidden md:block w-full md:w-full md:h-[500px] object-cover rounded-lg mb-4" 
+          className="hidden md:block w-full h-1/2 object-cover rounded-lg"
         />
       </div>
 

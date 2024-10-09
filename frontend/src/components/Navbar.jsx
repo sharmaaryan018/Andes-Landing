@@ -9,18 +9,18 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-transparent backdrop-blur-md py-2 fixed w-full top-0 z-50">
+    <nav className="bg-white py-1 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/">
-              <img src={logo} alt="Andes logo" className="mr-3 h-20 w-20" />
+              <img src={logo} alt="Andes logo" className="mr-3 h-16 w-16" />
             </a>
             <a href="/"></a>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center justify-center flex-grow space-x-6">
             <a
               href="/working"
               className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
@@ -53,10 +53,12 @@ const Navbar = () => {
             >
               About us
             </a>
+          </div>
+          <div className="hidden md:flex items-center">
             <a
-              href="/book-now"
-              className={`bg-white text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300 ${
-                isActive("/book-now") ? "bg-gray-100" : ""
+              href="https://play.google.com/store/apps/details?id=com.andes.laundry"
+              className={`bg-blue-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 ${
+                isActive("/book-now") ? "bg-blue-600" : ""
               }`}
             >
               Book now
@@ -125,7 +127,7 @@ const Navbar = () => {
             About us
           </a>
           <a
-            href="/book-now"
+            href="https://play.google.com/store/apps/details?id=com.andes.laundry"
             className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
               isActive("/book-now") ? "bg-blue-600 text-white" : ""
             }`}
