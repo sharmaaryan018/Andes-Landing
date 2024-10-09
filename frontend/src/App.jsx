@@ -9,6 +9,7 @@ import "./locomotive-scroll.css";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Other from "./pages/Other";
+import { FaComments } from "react-icons/fa"; // Import a generic chat icon
 
 function App() {
   const scrollRef = useRef(null);
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Navbar /> 
+      <Navbar />
       <div ref={scrollRef} className="flex flex-col min-h-screen scroll-container">
         <div className="flex-grow">
           <Routes>
@@ -38,11 +39,21 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/working" element={<Working />} />
             <Route path="/andes-assured" element={<AndesAssured />} />
-            <Route path="/other" element={<Other/>} />
+            <Route path="/other" element={<Other />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
           </Routes>
         </div>
       </div>
+
+      {/* Chat Button */}
+      <a
+        href="https://wa.me/+918626076578"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
+      >
+        <FaComments className="h-8 w-8" />
+      </a>
     </>
   );
 }

@@ -3,7 +3,7 @@ import second from "../assets/card4.png";
 
 const LaundryStatus = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 md:h-screen">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg md:h-screen border-b border-gray-300">
       {/* Left Section */}
       <div className="md:w-1/2 pr-6 flex flex-col justify-center">
         <h2 className="text-xl text-gray-500 uppercase mb-2">

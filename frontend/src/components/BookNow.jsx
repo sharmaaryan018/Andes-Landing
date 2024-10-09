@@ -1,17 +1,16 @@
-
 const BookNow = () => {
   const handleButtonClick = () => {
     window.location.href = 'https://play.google.com/store/apps/details?id=com.andes.laundry';
   };
 
   return (
-    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20  ">
+    <div className="bg-yellow-200 flex flex-col items-center justify-center py-20">
       <h2 className="text-2xl md:text-3xl font-semibold text-blue-900 mb-6 px-4 md:px-0">
         Book now. Smile away. Everyday.
       </h2>
       <button
         onClick={handleButtonClick}
-        className="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-100 transition self-start md:self-center ml-3 md:ml-0"
+        className="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg shadow-md flex items-center space-x-2 hover:bg-blue-100 transition self-center"
       >
         <span>
           {/* Icon or SVG for the button */}
