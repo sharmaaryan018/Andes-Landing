@@ -7,7 +7,7 @@ import Services from "../components/Services.jsx";
 import CustomerReviews from "../components/CustomerReview.jsx";
 import Future from "../components/Future.jsx";
 import BookNow from "../components/BookNow.jsx";
-import Serviceinfo from "../components/Serviceinfo.jsx";
+// import Serviceinfo from "../components/Serviceinfo.jsx";
 import ServiceFeatures from "../components/ServiceFeatures.jsx";
 import MyFooter from "../components/MyFooter.jsx";
 import playstore from "../assets/playstoreicon.svg";
@@ -22,6 +22,7 @@ import card3 from "../assets/card3.png";
 import card4 from "../assets/card4.png";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Appsupport from "../components/Appsupport.jsx";
+import FAQ from "../components/FAQ.jsx";
 
 const bulletPoints1 = [
   { icon: "🔔", text: "Get notified when your order is ready for pick-up" },
@@ -137,29 +138,29 @@ const LandingPage = () => {
         </main>
       </div>
       <div className="bg-blue-900 text-white p-8 shadow-md">
-  <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-center md:text-left">
-    {/* Title and Subtitle Section */}
-    <div className="mb-4 md:mb-0 md:w-1/2 md:ml-6">
-      <h1 className="text-xl font-bold mb-2">
-        The First Smart Laundry Service
-      </h1>
-      <p className="text-sm">
-        Includes Washing, Ironing, Dry Cleaning, and much more
-      </p>
-    </div>
-    {/* Star Rating Section */}
-    <div className="w-full md:w-1/2 text-center md:text-right">
-      <div className="flex items-center justify-center md:justify-end text-4xl md:mr-6">
-        <FaStar className="text-yellow-400" />
-        <FaStar className="text-yellow-400" />
-        <FaStar className="text-yellow-400" />
-        <FaStar className="text-yellow-400" />
-        <FaStarHalfAlt className="text-yellow-400" />
-        <span className="ml-2 text-sm">(4.5)</span>
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-center md:text-left">
+          {/* Title and Subtitle Section */}
+          <div className="mb-4 md:mb-0 md:w-1/2 md:ml-6">
+            <h1 className="text-xl font-bold mb-2">
+              The First Smart Laundry Service
+            </h1>
+            <p className="text-sm">
+              Includes Washing, Ironing, Dry Cleaning, and much more
+            </p>
+          </div>
+          {/* Star Rating Section */}
+          <div className="w-full md:w-1/2 text-center md:text-right">
+            <div className="flex items-center justify-center md:justify-end text-4xl md:mr-6">
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStarHalfAlt className="text-yellow-400" />
+              <span className="ml-2 text-sm">(4.5)</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
       {/* Additional Sections */}
       <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
         <ServiceFeatures />
@@ -173,7 +174,8 @@ const LandingPage = () => {
           Let's see how we can schedule your next order
         </h2>
       </div>
-      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-4 lg:pt-24 pb-0">
+        {" "}
         <FeatureLeft
           title="FLEXIBLE"
           subtitle="1. Schedule Your Collection"
@@ -204,13 +206,14 @@ const LandingPage = () => {
         />
       </section>
       <CustomerReviews />
-      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
-      <Appsupport />
-      </section>
       <AndesAssured />
       <Future />
       <BookNow />
-      <TeamSection />
+      <TeamSection />{" "}
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 pt-0 pb-0">
+        <Appsupport />
+      </section>
+      <FAQ/>
       <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );

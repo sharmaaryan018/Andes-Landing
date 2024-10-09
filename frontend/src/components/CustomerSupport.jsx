@@ -3,7 +3,7 @@ import third from "../assets/card3.png";
 
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg shadow-lg mt-4 md:h-screen">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg md:h-screen border-b border-gray-300">
       {/* Right Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 relative flex flex-col justify-center items-center">
         <img
