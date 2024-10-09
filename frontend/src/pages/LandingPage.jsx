@@ -1,5 +1,5 @@
 import useTypewriter from "../hooks/useTypewriter"; // Import the useTypewriter hook
-import man from "../assets/Designer2.jpg";
+import van from "../assets/van.png"; // Import the van image
 import LaundryService from "../components/LaundryService.jsx";
 import LaundryStatus from "../components/LaundryStatus.jsx";
 import CustomerSupport from "../components/CustomerSupport.jsx";
@@ -16,10 +16,11 @@ import AndesAssured from "../components/AA.jsx";
 import TeamSection from "../components/TeamSection.jsx";
 import FeatureLeft from "../components/FeatureLeft.jsx";
 import FeatureRight from "../components/FeatureRight.jsx";
-import card1 from "../assets/card1.jpg";
-import card2 from "../assets/card2.jpg";
-import card3 from "../assets/card3.jpg";
+import card1 from "../assets/card1.png";
+import card2 from "../assets/card2.png";
+import card3 from "../assets/card3.png";
 import card4 from "../assets/card4.png";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const bulletPoints1 = [
   { icon: "🔔", text: "Get notified when your order is ready for pick-up" },
@@ -41,15 +42,9 @@ const bulletPoints4 = [
   { icon: "📦", text: "Enjoy freshly cleaned clothes at your doorstep" },
 ];
 
-const bulletPointsEnvironmental = [
-  { icon: "🍃", text: "Zero-emission delivery vehicles" },
-  { icon: "💧", text: "Efficient water use" },
-  { icon: "❤️", text: "Trustworthy local cleaners" },
-];
-
 const LandingPage = () => {
-  const areas = ["Kothrud", "Pimpri Chinchwad", "Shivaji Nagar"]; // Define the array of names
-  const typewriterText = useTypewriter(areas, 100, 60, 1500); // Use the useTypewriter hook
+  // const areas = ["Kothrud", "Pimpri Chinchwad", "Shivaji Nagar"]; // Define the array of names
+  // const typewriterText = useTypewriter(areas, 100, 60, 1500); // Use the useTypewriter hook
 
   return (
     <div>
@@ -81,47 +76,58 @@ const LandingPage = () => {
 
             {/* Store links */}
             <div className="rounded-lg flex flex-row items-center mt-6 md:mb-4 space-x-4">
-  <div className="flex items-center shadow-white p-2 md:p-4 rounded-lg bg-white">
-    <a
-      href="https://play.google.com/store/apps/details?id=com.andes.laundry"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center"
-    >
-      <img src={playstore} alt="Play Store" className="w-11 h-11 md:w-16" />
-      <div className="ml-2 md:ml-4">
-        <p className="text-sm md:text-lg font-semibold text-black">
-          Download Andes
-        </p>
-        <p className="text-xs md:text-sm text-black">from Playstore</p>
-      </div>
-    </a>
-  </div>
-  <div className="flex items-center shadow-white p-2 md:p-4 rounded-lg bg-white">
-    <a
-      href="#"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center"
-    >
-      <img src={appstore} alt="App Store" className="w-11 h-11 md:w-16" />
-      <div className="ml-2 md:ml-4">
-        <p className="text-sm md:text-lg font-semibold text-black">
-          Download Andes
-        </p>
-        <p className="text-xs md:text-sm text-black">from App Store</p>
-      </div>
-    </a>
-  </div>
-</div>
-
+              <div className="flex items-center shadow-white p-2 md:p-4 rounded-lg bg-white">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.andes.laundry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <img
+                    src={playstore}
+                    alt="Play Store"
+                    className="w-11 h-11 md:w-16"
+                  />
+                  <div className="ml-2 md:ml-4">
+                    <p className="text-sm md:text-lg font-semibold text-black">
+                      Download Andes
+                    </p>
+                    <p className="text-xs md:text-sm text-black">
+                      from Playstore
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div className="flex items-center shadow-white p-2 md:p-4 rounded-lg bg-white">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <img
+                    src={appstore}
+                    alt="App Store"
+                    className="w-11 h-11 md:w-16"
+                  />
+                  <div className="ml-2 md:ml-4">
+                    <p className="text-sm md:text-lg font-semibold text-black">
+                      Download Andes
+                    </p>
+                    <p className="text-xs md:text-sm text-black">
+                      from App Store
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Image Section */}
           <div className="mb-4 w-full md:w-[450px] flex justify-center hidden md:block md:ml-52">
             <div className="relative w-80 h-80 sm:w-[35rem] sm:h-[35rem] md:w-[40rem] md:h-[40rem]">
               <img
-                src={man}
+                src={van}
                 alt="Happy customer with laundry"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -129,18 +135,44 @@ const LandingPage = () => {
           </div>
         </main>
       </div>
+      <div className="bg-blue-900 text-white p-8 shadow-md">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-center md:text-left">
+          {/* Title and Subtitle Section */}
+          <div className="mb-4 md:mb-0">
+            <h1 className="text-xl font-bold mb-2">
+              The First Smart Laundry Service
+            </h1>
+            <p className="text-sm">
+              Includes Washing, Ironing, Dry Cleaning, and much more
+            </p>
+          </div>
+          {/* Star Rating Section */}
+          <div className="w-full text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start text-4xl">
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStar className="text-yellow-400" />
+              <FaStarHalfAlt className="text-yellow-400" />
+              <span className="ml-2 text-sm">(4.5)</span>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Additional Sections */}
       <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
-        <Serviceinfo />
         <ServiceFeatures />
         <LaundryService />
         <LaundryStatus />
         <CustomerSupport />
-        <div className="text-center mt-8 mb-8 bg-blue-500 py-4">
-          <h2 className="text-2xl font-bold text-white">
-            Let's see how we can schedule your next order
-          </h2>
-        </div>
+      </section>
+      <Services />
+      <div className="text-center mt-8  bg-blue-500 py-4">
+        <h2 className="text-2xl font-bold text-white">
+          Let's see how we can schedule your next order
+        </h2>
+      </div>
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
         <FeatureLeft
           title="FLEXIBLE"
           subtitle="1. Schedule Your Collection"
@@ -169,13 +201,12 @@ const LandingPage = () => {
           imageSrc={card4}
           bulletPoints={bulletPoints4}
         />
-        <Services />
-        <CustomerReviews />
-        <AndesAssured />
-        <Future />
-        <BookNow />
-        <TeamSection />
       </section>
+      <CustomerReviews />
+      <AndesAssured />
+      <Future />
+      <BookNow />
+      <TeamSection />
       <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );

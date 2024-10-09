@@ -1,5 +1,5 @@
 import { FaClock, FaShoppingBag } from "react-icons/fa";
-import clothcarryingman from "../assets/Designer.jpeg";
+import second from "../assets/second.jpg";
 
 const LaundryStatus = () => {
   return (
@@ -29,13 +29,12 @@ const LaundryStatus = () => {
       </div>
 
       {/* Image and Instructions Section */}
-      <div className="md:w-1/2 md:pl-4 flex flex-col justify-center items-center relative">
+      <div className="md:w-1/2 md:pl-4 flex flex-col justify-center items-center relative mt-4">
         <img
-          src={clothcarryingman}
+          src={second}
           alt="Man in coat carrying documents"
-          className="hidden md:block md:w-96 md:h-96 object-cover rounded-lg mb-4"
-        />
-        <div className="flex justify-center items-center w-full md:justify-start pt-6 md:pt-0">
+          className="hidden md:block w-full md:w-full md:h-[500px] object-cover rounded-lg mb-4"        />
+        {/* <div className="flex justify-center items-center w-full md:justify-start pt-6 md:pt-0">
           <div className="bg-white p-6 rounded-lg shadow-md max-w-xs w-full z-10 md:absolute md:top-60 md:left-0 md:transform md:-translate-x-1/4 md:-translate-y-1/4">
             <div className="flex items-center mb-4">
               <div className="bg-blue-500 rounded-full p-4 mr-4">
@@ -67,7 +66,7 @@ const LaundryStatus = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

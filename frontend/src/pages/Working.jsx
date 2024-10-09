@@ -5,9 +5,9 @@ import QuickCleanFresh from "../components/QuickCleanFresh";
 import AboutUsImage from "../assets/aboutus.jpeg";
 import CustomerStories from "../components/CustomerStories";
 import Schedule from "../components/Schedule";
-import card1 from "../assets/card1.jpg";
-import card2 from "../assets/card2.jpg";
-import card3 from "../assets/card3.jpg";
+import card1 from "../assets/card1.png";
+import card2 from "../assets/card2.png";
+import card3 from "../assets/card3.png";
 import card4 from "../assets/card4.png";
 import MyFooter from "../components/MyFooter";
 
