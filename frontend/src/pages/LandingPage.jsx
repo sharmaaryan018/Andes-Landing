@@ -51,7 +51,7 @@ const LandingPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-blue-500 md:min-h-screen flex justify-center items-center pt-16 md:pt-24">
+      <div className="bg-blue-500 md:min-h-screen flex justify-center items-center pt-16 md:pt-2">
         <main className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           {/* Text Section */}
           <div className="mt-16 w-full md:w-[500px] text-white md:ml-32 mb-12 md:mb-0 md:pr-8">
@@ -126,7 +126,7 @@ const LandingPage = () => {
           </div>
 
           {/* Image Section */}
-          <div className="mb-4 w-full md:w-[450px] flex justify-center hidden md:block md:ml-52">
+          <div className="mb-4 w-full md:w-[450px] flex justify-center hidden md:block md:ml-52 md:mt-28">
             <div className="relative w-80 h-80 sm:w-[35rem] sm:h-[35rem] md:w-[40rem] md:h-[40rem]">
               <img
                 src={van}
