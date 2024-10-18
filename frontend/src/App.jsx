@@ -10,6 +10,7 @@ import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Other from "./pages/Other";
 import { FaComments } from "react-icons/fa"; // Import a generic chat icon
+import './App.css';
 
 function App() {
   const scrollRef = useRef(null);

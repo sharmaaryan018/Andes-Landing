@@ -3,13 +3,13 @@ import third from "../assets/card3.png";
 
 const CustomerSupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg md:h-screen border-b border-gray-300">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg md:h-auto md:mb-40">
       {/* Right Section */}
       <div className="md:w-1/2 mt-6 md:mt-0 relative flex flex-col justify-center items-center">
         <img
           src={third}
           alt="Customer support representative"
-          className="hidden md:block w-full h-1/2 object-cover rounded-lg"
+          className="hidden md:block w-full h-full object-cover rounded-lg"
         />
       </div>
 

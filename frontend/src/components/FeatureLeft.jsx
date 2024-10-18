@@ -3,7 +3,7 @@ import React from "react";
 
 const FeatureLeft = ({ title, subtitle, description, imageSrc, bulletPoints }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center my-12">
+    <div className="flex flex-col md:flex-row items-center my-0 pt-0 pb-0 md:py-12">
       <div className="hidden md:block md:w-1/2 m-6">
         <img
           src={imageSrc}

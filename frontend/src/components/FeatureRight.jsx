@@ -3,7 +3,7 @@ import React from "react";
 
 const FeatureRight = ({ title, subtitle, description, imageSrc, bulletPoints }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center my-12">
+    <div className="flex flex-col md:flex-row items-center my-0  pt-0 pb-0">
       <div className="md:w-1/2 p-8">
         <h2 className="text-xl font-semibold text-blue-900 mb-2">{title}</h2>
         <h3 className="text-2xl font-bold text-blue-900 mb-4">{subtitle}</h3>

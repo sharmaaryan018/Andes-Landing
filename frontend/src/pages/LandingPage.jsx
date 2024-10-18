@@ -1,4 +1,4 @@
-import useTypewriter from "../hooks/useTypewriter"; // Import the useTypewriter hook
+// import useTypewriter from "../hooks/useTypewriter";
 import van from "../assets/van.png"; // Import the van image
 import LaundryService from "../components/LaundryService.jsx";
 import LaundryStatus from "../components/LaundryStatus.jsx";
@@ -51,23 +51,23 @@ const LandingPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-blue-500 min-h-screen flex justify-center items-center pt-16 md:pt-24">
+      <div className="bg-blue-500 md:min-h-screen flex justify-center items-center pt-16 md:pt-24">
         <main className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           {/* Text Section */}
-          <div className="mt-4 w-full md:w-[500px] text-white md:ml-32 mb-12 md:mb-0 md:pr-8">
-            <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-2 leading-tight">
+          <div className="mt-16 w-full md:w-[500px] text-white md:ml-32 mb-12 md:mb-0 md:pr-8">
+            <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-2 leading-tight mt-2">
               Laundry & dry
             </h1>
-            <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-2 leading-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-2  leading-tight">
               cleaning within
             </h1>
-            <h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-10 leading-tight">
+            <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-10 mb-2 leading-tight">
               24h delivery
             </h1>
 
             {/* Typewriter text with fixed height and left alignment */}
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-300 mb-8 typing text-left"
+              className="text-2xl sm:text-4xl md:text-5xl font-bold text-yellow-300 md:mb-8 typing text-left"
               style={{
                 minWidth: "300px", // Set minimum width to the largest word length to avoid shifting
                 minHeight: "70px", // Set a fixed height to avoid vertical shifting
@@ -140,17 +140,17 @@ const LandingPage = () => {
       <div className="bg-blue-900 text-white p-8 shadow-md">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-center md:text-left">
           {/* Title and Subtitle Section */}
-          <div className="mb-4 md:mb-0 md:w-1/2 md:ml-6">
-            <h1 className="text-xl font-bold mb-2">
-              The First Smart Laundry Service
+          <div className="mb-4 md:mb-0 md:w-1/2 md:ml-36">
+            <h1 className="text-xl md:text-4xl font-bold mb-2 text-yellow-300">
+              The #1 Smart Laundry Service
             </h1>
             <p className="text-sm">
-              Includes Washing, Ironing, Dry Cleaning, and much more
+              in categories Dry cleaner, Laundry service and Laundrette{" "}
             </p>
           </div>
           {/* Star Rating Section */}
           <div className="w-full md:w-1/2 text-center md:text-right">
-            <div className="flex items-center justify-center md:justify-end text-4xl md:mr-6">
+            <div className="flex items-center justify-center md:justify-end text-4xl md:mr-36">
               <FaStar className="text-yellow-400" />
               <FaStar className="text-yellow-400" />
               <FaStar className="text-yellow-400" />
@@ -162,19 +162,19 @@ const LandingPage = () => {
         </div>
       </div>
       {/* Additional Sections */}
-      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:py-24">
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-16 lg:pt-24 md:pb-0">
         <ServiceFeatures />
         <LaundryService />
         <LaundryStatus />
         <CustomerSupport />
       </section>
       <Services />
-      <div className="text-center mt-8  bg-blue-500 py-4">
-        <h2 className="text-2xl font-bold text-white">
+      <div className="text-center mt-12  bg-white py-4 p-4">
+        <h2 className="text-2xl  text-blue-700">
           Let's see how we can schedule your next order
         </h2>
       </div>
-      <section className="px-4 sm:px-8 md:px-16 lg:px-32 py-12 md:py-4 lg:pt-24 pb-0">
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 pt-0 pb-0 md:py-0 lg:py-0">
         {" "}
         <FeatureLeft
           title="FLEXIBLE"
@@ -210,10 +210,10 @@ const LandingPage = () => {
       <Future />
       <BookNow />
       <TeamSection />{" "}
-      <section className="px-4 sm:px-8 md:px-16 lg:px-32 pt-0 pb-0">
+      <section className="px-4 sm:px-8 md:px-16 lg:px-32 pt-0 pb-0 ">
         <Appsupport />
       </section>
-      <FAQ/>
+      <FAQ />
       <MyFooter /> {/* Footer stays at the bottom of the page */}
     </div>
   );
