@@ -1,27 +1,30 @@
 import React from "react";
+import customer1 from "../assets/customer1.jpg";
+import customer2 from "../assets/customer2.jpg";
+import customer3 from "../assets/customer3.jpg";
 
 const CustomerStories = () => {
   const stories = [
     {
-      title: "Rahul's Story",
-      tags: ["Saving Time", "Repeat Orders", "Door-to-Door Delivery"],
+      title: "Atharva's Story",
+      tags: ["2-Hour Service", "On-Time Delivery", "Repeat Orders"],
       description:
-        "As a software engineer working long hours, Rahul found it hard to keep up with laundry. Our service saved him hours each week by offering quick pickups and doorstep deliveries, making life a lot easier.",
-      image: "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
+        "Andes always delivers my laundry on time! Their 2-hour service is perfect for busy days.",
+      image: customer1,
     },
     {
-      title: "Priya's Story",
-      tags: ["Simple App", "Affordable Prices", "Top Quality"],
+      title: "Yashwini's Story",
+      tags: ["Great Service", "Affordable Prices", "Highly Satisfied"],
       description:
-        "Between her job and weekend MBA classes, Priya was always on the go. She loves how easy it is to book a laundry pickup through the app, and the prices fit her budget perfectly.",
-      image: "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
+        "I've been using Andes for a while now and I'm very happy with their service.",
+      image: customer2,
     },
     {
-      title: "Amit’s Story",
-      tags: ["Quick Booking", "Next-Day Delivery", "Order Tracking"],
+      title: "Shankhadeep's Story",
+      tags: ["Fast Service", "Stress-Free", "Highly Recommended"],
       description:
-        "As a bachelor living in Pune, Amit always had laundry piling up. Thanks to the quick booking and next-day delivery service, he can now stay on top of his laundry without hassle.",
-      image: "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
+        "Fast and stress-free service. Highly recommend!",
+      image: customer3,
     },
   ];
 

@@ -1,43 +1,38 @@
 /* eslint-disable react/prop-types */
 
+import customer1 from "../assets/customer1.jpg";
+import customer2 from "../assets/customer2.jpg";
+import customer3 from "../assets/customer3.jpg";
+
 const CustomerReviews = () => {
   const reviews = [
     {
-      name: "Rahul",
-      text: "As a software engineer working long hours, Rahul found it hard to keep up with laundry. Our service saved him hours each week by offering quick pickups and doorstep deliveries, making life a lot easier.",
+      name: "Atharva ",
+      text: "Andes always delivers my laundry on time! their 2-hour service is perfect for busy days",
       rating: 5,
-      imageUrl:
-        "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
+      imageUrl: customer1,
       source: "Google Reviews",
-      sourceImage:
-        "https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?w=900&t=st=1727438752~exp=1727439352~hmac=c7a814efd31b975f152e1bd23e4f630a265197925b123d66e9ee22264da405a9",
     },
     {
-      name: "Priya",
-      text: "Happy with the way the app works. Was able to do all the things I could get done on the website. Have used the wash and tumble dry service twice now and so far it's been fantastic; no delays with the pick up or drop off of the bags, no missing or damaged items. I'm very pleased with Laundryheap altogether.",
+      name: "Yashwini",
+      text: "I've been using Andes for a while now and I'm very happy with their service",
       rating: 4,
-      imageUrl:
-        "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
+      imageUrl: customer2,
       source: "Play Store",
-      sourceImage:
-        "https://img.freepik.com/free-photo/closeup-smiling-young-beautiful-indian-woman_1262-2261.jpg?w=900&t=st=1727438799~exp=1727439399~hmac=814faa7ce492a7f822116d69f441578a9fd46321a899a506fe502071ff40fcfe",
     },
     {
-      name: "Amit",
-      text: "This app is one of the best that I have navigated. It saves me the walking, parking, getting change, waiting to use a dryer in a launderette and folding of clothes. I'm glad I found it.",
+      name: "Shankhadeep",
+      text: "Fast and stress-free service. Highly recommend!",
       rating: 5,
-      imageUrl:
-        "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
+      imageUrl: customer3,
       source: "Google Reviews",
-      sourceImage:
-        "https://img.freepik.com/free-photo/worldface-pakistani-guy-white-background_53876-14466.jpg?w=740&t=st=1727793417~exp=1727794017~hmac=c107848fc96d2d4494a289f46bfc8b316bd0e827471bda91c36954da2fe4cbd4",
     },
   ];
   return (
     <div className="max-w-6xl mx-auto p-4 sm:p-16 text-center mt-0">
       <h2 className="text-4xl font-bold mb-6">Our Happy customers</h2>
       <p className="text-gray-600 mb-6">
-        Rated excellent ★★★★★ by 500,000+ users
+        Rated excellent ★★★★★ by ourusers
       </p>
       <a href="#" className="text-blue-600 underline mb-10 inline-block">
         Read more reviews
