@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faMapMarkerAlt, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import vanImage from '../assets/van.png'; // Import the image
 
 const WhoWeAre = () => {
   return (
@@ -50,9 +51,9 @@ const WhoWeAre = () => {
       {/* Image Section */}
       <div className="flex-1 hidden md:block">
         <img
-          src="https://i.ibb.co/2vQyXv4/Screenshot-2024-10-01-223624.png"
-          alt="Screenshot-2024-10-01-223624"
-          className="w-full md:max-h-96 md:pt-10 object-cover rounded-lg shadow-lg"
+          src={vanImage} // Use the imported image
+          alt="Andes Delivery Van"
+          className="w-full md:max-h md:pt-10 object-cover rounded-lg shadow-lg"
         />
       </div>
     </div>
