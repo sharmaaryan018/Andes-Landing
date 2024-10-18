@@ -26,7 +26,7 @@ const Services = () => {
           </button>
         </a>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <div className="flex overflow-x-auto md:overflow-x-hidden  overflow-y-hidden space-x-4 md:grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         <ItemCard
           title="Wash"
           price="₹59/Kg"

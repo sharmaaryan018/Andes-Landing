@@ -31,12 +31,12 @@ const TeamSection = () => {
 
       <div className="flex flex-col items-center">
         {/* Aryan's Image */}
-        <div className="relative w-48 h-48 overflow-hidden mx-auto mb-8">
+        <div className="relative w-32 h-32 md:w-48 md:h-48 overflow-hidden mx-auto mb-8">
           <div className="relative group">
             <img
               src={Aryan}
               alt="Aryan Gupta"
-              className="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110"
+              className="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
               <span className="text-white text-center">
@@ -56,13 +56,13 @@ const TeamSection = () => {
           {teamMembers.slice(1).map((member, index) => (
             <div
               key={index}
-              className={`relative w-48 h-48 overflow-hidden mx-auto`}
+              className="relative w-32 h-32 md:w-48 md:h-48 overflow-hidden mx-auto"
             >
               <div className="relative group">
                 <img
                   src={member.src}
                   alt={member.name}
-                  className="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110"
+                  className="w-full h-full object-cover rounded-full shadow-lg transition-transform duration-300"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full">
                   <span className="text-white text-center">

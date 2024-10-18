@@ -8,7 +8,7 @@ import second from "../assets/card4.png";
 
 const Appsupport = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg mt-4 md:mt-0 md:h-screen border-b border-gray-300">
+    <div className="flex flex-col md:flex-row bg-white p-6 rounded-lg md:mt-0 md:h-screen border-b border-gray-300">
       {" "}
       {/* Left Section */}
       <div className="md:w-1/2 pr-6 flex flex-col justify-center">

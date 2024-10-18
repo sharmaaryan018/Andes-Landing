@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
-
 const ItemCard = ({
   title,
   price,
@@ -10,7 +8,7 @@ const ItemCard = ({
   returned,
   icon,
 }) => (
-  <div className="bg-blue-500 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105">
+  <div className="bg-blue-500 p-6 rounded-lg shadow-md transform transition-transform duration-300 md:hover:scale-105 w-full md:w-auto flex-shrink-0 md:ml-4">
     <div className="flex justify-between items-center mb-4">
       <div>
         <h3 className="text-lg font-semibold text-white">{title}</h3>

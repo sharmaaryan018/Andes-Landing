@@ -2,13 +2,13 @@ import { FaCheckCircle, FaShippingFast, FaShieldAlt, FaLeaf } from 'react-icons/
 
 const AndesAssured = () => {
   return (
-    <div className="bg-blue-700 py-12 mt-9 ">
+    <div className="bg-blue-700 py-12 mt-9">
       <div className="container mx-auto px-6 md:px-12 md:pt-24 md:pb-24">
         <h1 className="text-4xl font-bold text-center text-white mb-12">
           What is Andes Assured?
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        <div className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:overflow-y-hidden">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 md:hover:scale-105 md:hover:shadow-2xl min-w-full md:min-w-0">
             <FaCheckCircle className="text-blue-500 text-6xl mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">
               Quality Check
@@ -18,7 +18,7 @@ const AndesAssured = () => {
               ensure it’s cleaned and handled with the utmost care.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 md:hover:scale-105 md:hover:shadow-2xl min-w-full md:min-w-0">
             <FaShippingFast className="text-blue-500 text-6xl mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">
               Ultra-Fast Delivery
@@ -28,7 +28,7 @@ const AndesAssured = () => {
               ever before.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 md:hover:scale-105 md:hover:shadow-2xl min-w-full md:min-w-0">
             <FaShieldAlt className="text-blue-500 text-6xl mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">
               Clothes Insurance
@@ -38,7 +38,7 @@ const AndesAssured = () => {
               got you covered.
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center transform transition-transform duration-300 md:hover:scale-105 md:hover:shadow-2xl min-w-full md:min-w-0">
             <FaLeaf className="text-blue-500 text-6xl mx-auto mb-4" />
             <h2 className="text-2xl font-semibold text-gray-800 mb-2">
               Eco-Friendly Cleaning
