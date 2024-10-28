@@ -11,6 +11,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import Other from "./pages/Other";
 import { FaComments } from "react-icons/fa"; // Import a generic chat icon
 import './App.css';
+import IntercomComponent from './intercom'; // Import the Intercom component
 
 function App() {
   const scrollRef = useRef(null);
@@ -46,15 +47,8 @@ function App() {
         </div>
       </div>
 
-      {/* Chat Button */}
-      <a
-        href="https://wa.me/+918626076578"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
-      >
-        <FaComments className="h-8 w-8" />
-      </a>
+      {/* Intercom Component */}
+      <IntercomComponent />
     </>
   );
 }
