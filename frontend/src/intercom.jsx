@@ -5,5 +5,5 @@ export default function Component() {
     app_id: 'o4sf91nl',
   });
 
-  return <div>Example App</div>;
+  return <div></div>;
 }

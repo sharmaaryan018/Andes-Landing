@@ -9,7 +9,6 @@ import "./locomotive-scroll.css";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Other from "./pages/Other";
-import { FaComments } from "react-icons/fa"; // Import a generic chat icon
 import './App.css';
 import IntercomComponent from './intercom'; // Import the Intercom component
 
