@@ -1,44 +1,65 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className="bg-blue-500 py-4 fixed w-full top-0 z-50 shadow-md">
+    <nav className="bg-white py-1 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <img
-              src="/api/placeholder/40/40"
-              alt="Andes logo"
-              className="mr-3 h-10 w-10"
-            />
-            <span className="text-white text-2xl font-bold">Andes</span>
+            <a href="/">
+              <img src={logo} alt="Andes logo" className="mr-3 h-16 w-16" />
+            </a>
+            <a href="/"></a>
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center justify-center flex-grow space-x-6">
             <a
               href="/working"
-              className="text-white hover:text-gray-200 transition duration-300"
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
+                isActive("/working") ? "underline" : ""
+              }`}
             >
               How it works
             </a>
             <a
               href="/services"
-              className="text-white hover:text-gray-200 transition duration-300"
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
+                isActive("/services") ? "underline" : ""
+              }`}
             >
               Services & Pricing
             </a>
             <a
+              href="/andes-assured"
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
+                isActive("/andes-assured") ? "underline" : ""
+              }`}
+            >
+              Andes Assured
+            </a>
+            <a
               href="/about"
-              className="text-white hover:text-gray-200 transition duration-300"
+              className={`text-gray-900 hover:text-gray-700 transition duration-300 ${
+                isActive("/about") ? "underline" : ""
+              }`}
             >
               About us
             </a>
+          </div>
+          <div className="hidden md:flex items-center">
             <a
-              href="/book-now"
-              className="bg-white text-blue-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+              href="https://play.google.com/store/apps/details?id=com.andes.laundry"
+              className={`bg-blue-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-600 transition duration-300 ${
+                isActive("/book-now") ? "bg-blue-600" : ""
+              }`}
             >
               Book now
             </a>
@@ -48,7 +69,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              className="text-gray-900 focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -70,29 +91,46 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? "block" : "hidden"} md:hidden mt-4`}>
+        <div
+          className={`${isOpen ? "block" : "hidden"} md:hidden mt-4 space-y-4`}
+        >
           <a
             href="/working"
-            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/working") ? "bg-blue-600 text-white" : ""
+            }`}
           >
             How it works
           </a>
           <a
             href="/services"
-            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/services") ? "bg-blue-600 text-white" : ""
+            }`}
           >
             Services & Pricing
           </a>
           <a
+            href="/andes-assured"
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/andes-assured") ? "bg-blue-600 text-white" : ""
+            }`}
+          >
+            Andes Assured
+          </a>
+          <a
             href="/about"
-            className="block text-white py-2 hover:bg-blue-600 transition duration-300"
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/about") ? "bg-blue-600 text-white" : ""
+            }`}
           >
             About us
           </a>
-
           <a
-            href="/book-now"
-            className=" bg-white text-blue-500  px-2 py-1 rounded-full font-semibold  mt-2 hover:bg-gray-100 transition duration-300"
+            href="https://play.google.com/store/apps/details?id=com.andes.laundry"
+            className={`block text-gray-900 py-2 hover:bg-blue-600 hover:text-white transition duration-300 ${
+              isActive("/book-now") ? "bg-blue-600 text-white" : ""
+            }`}
           >
             Book now
           </a>

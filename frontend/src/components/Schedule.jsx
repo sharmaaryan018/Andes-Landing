@@ -25,7 +25,7 @@ const Schedule = () => {
             Enter your address and schedule a collection today
           </p>
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.andes.laundry"
             className="inline-block bg-white text-blue-900 font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-blue-50 transition-colors"
           >
             <span className="mr-2">💙</span> Schedule your pickup

@@ -1,27 +1,30 @@
 import React from "react";
+import customer1 from "../assets/customer1.jpg";
+import customer2 from "../assets/customer2.jpg";
+import customer3 from "../assets/customer3.jpg";
 
 const CustomerStories = () => {
   const stories = [
     {
-      title: "Daniel's story",
-      tags: ["Saving Time", "Repeat Orders", "Door-2-Door Delivery"],
+      title: "Atharva's Story",
+      tags: ["2-Hour Service", "On-Time Delivery", "Repeat Orders"],
       description:
-        "Too busy for your clothing care needs? See how to cut the hassle and time in half with Laundryheap.",
-      image: "/path/to/daniel-image.png",
+        "Andes always delivers my laundry on time! Their 2-hour service is perfect for busy days.",
+      image: customer1,
     },
     {
-      title: "Angela's Story",
-      tags: ["Simple App", "Affordable Prices", "Top Quality"],
+      title: "Yashwini's Story",
+      tags: ["Great Service", "Affordable Prices", "Highly Satisfied"],
       description:
-        "Check out how taking care of large amounts of laundry in a household with teenagers looks like.",
-      image: "/path/to/angela-image.png",
+        "I've been using Andes for a while now and I'm very happy with their service.",
+      image: customer2,
     },
     {
-      title: "Sarah’s Story",
-      tags: ["Quick Booking", "Next-Day Delivery", "Order Tracking"],
+      title: "Shankhadeep's Story",
+      tags: ["Fast Service", "Stress-Free", "Highly Recommended"],
       description:
-        "No one likes having piles of laundry lying around. See how to solve that problem in no time.",
-      image: "/path/to/sarah-image.png",
+        "Fast and stress-free service. Highly recommend!",
+      image: customer3,
     },
   ];
 
@@ -29,9 +32,9 @@ const CustomerStories = () => {
     <section className="bg-yellow-200 py-12">
       <div className="container mx-auto">
         <h2 className="text-center text-3xl font-bold mb-8 text-blue-800">
-          Meet Laundryheap customers
+          Meet Our Customers
         </h2>
-        <div className="flex flex-wrap justify-center space-x-4">
+        <div className="flex flex-wrap justify-center">
           {stories.map((story, index) => (
             <div
               key={index}
@@ -46,8 +49,10 @@ const CustomerStories = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{story.title}</h3>
-              <div className="flex flex-wrap mb-4">
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                {story.title}
+              </h3>
+              <div className="flex flex-wrap justify-center mb-4">
                 {story.tags.map((tag, index) => (
                   <span
                     key={index}
@@ -57,13 +62,17 @@ const CustomerStories = () => {
                   </span>
                 ))}
               </div>
-              <p className="text-gray-600 mb-4">{story.description}</p>
-              <a
-                href="#"
-                className="text-blue-500 hover:text-blue-700 font-semibold"
-              >
-                See more
-              </a>
+              <p className="text-gray-600 mb-4 text-center">
+                {story.description}
+              </p>
+              <div className="text-center">
+                <a
+                  href="#"
+                  className="text-blue-500 hover:text-blue-700 font-semibold"
+                >
+                  See more
+                </a>
+              </div>
             </div>
           ))}
         </div>

@@ -8,7 +8,7 @@ const LaundryServiceIntro = () => {
           Reinventing the Future of Laundry and Dry Cleaning
         </h2>
         <p className="text-lg lg:text-xl mb-4 leading-relaxed">
-          Laundryheap delivers the quickest, easiest to use, and most reliable
+          Andes delivers the quickest, easiest to use, and most reliable
           professional laundry and dry cleaning service that completely adjusts
           to your needs.
         </p>
@@ -20,8 +20,7 @@ const LaundryServiceIntro = () => {
       </div>
       <div className="flex-1">
         <img
-          src="path_to_your_image" // Replace with your image path
-          alt="Laundry Service"
+          
           className="w-full h-auto object-cover rounded-lg shadow-lg"
         />
       </div>

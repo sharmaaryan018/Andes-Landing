@@ -1,6 +1,6 @@
-import React from "react";
-import freeDeliveryIcon from "../assets/fold.jpeg";
-
+import freeDeliveryIcon from "../assets/freedelivery.svg";
+import moneyicon from "../assets/moneyicon.svg";
+import serviceicon from "../assets/serviceicon.svg";
 const PricingSection = () => {
   return (
     <section className="bg-blue-500 text-white py-24">
@@ -27,24 +27,24 @@ const PricingSection = () => {
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 mb-2">
               <img
-                src={freeDeliveryIcon}
+                src={moneyicon}
                 alt="Minimum order"
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-lg font-semibold">$35 minimum order</p>
+            <p className="text-lg font-semibold">₹50 minimum order</p>
           </div>
 
           {/* Feature 3 */}
           <div className="flex flex-col items-center">
             <div className="w-12 h-12 mb-2">
               <img
-                src={freeDeliveryIcon}
+                src={serviceicon}
                 alt="Service fee"
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-lg font-semibold">Service fee from $4.95</p>
+            <p className="text-lg font-semibold">Service fee from ₹6</p>
           </div>
         </div>
       </div>

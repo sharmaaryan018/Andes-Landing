@@ -10,7 +10,7 @@ const EnvironmentalFeature = ({
   imageSrc,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center bg-blue-900 text-white py-16 px-8">
+    <div className="flex flex-col md:flex-row items-center bg-blue-900 text-white py-16 px-8 ">
       <div className="md:w-1/2">
         <h2 className="text-lg font-semibold mb-2">{title}</h2>
         <h3 className="text-3xl font-bold mb-4">{subtitle}</h3>
@@ -27,11 +27,11 @@ const EnvironmentalFeature = ({
           {buttonText}
         </button>
       </div>
-      <div className="md:w-1/2 mt-8 ml-36 md:mt-0">
+      <div className="md:w-1/2 mt-8 ml-36 md:mt-0 hidden md:block">
         <img
           src={imageSrc}
           alt="feature"
-          className="w-[75%] h-auto object-cover"
+          className="w-[90%] h-auto object-cover"
         />
       </div>
     </div>

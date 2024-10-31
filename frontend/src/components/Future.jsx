@@ -1,13 +1,17 @@
-import React from "react";
+import future from "../assets/aboutus.jpeg";
 
 const Future = () => {
+  const handleButtonClick = () => {
+    window.location.href = '/about';
+  };
+
   return (
     <div className="bg-teal-500 flex items-center justify-center min-h-screen p-6">
       <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 max-w-6xl">
         <div className="relative w-full md:w-1/2">
           <div className="overflow-hidden rounded-full md:rounded-xl">
             <img
-              src="path-to-your-image"
+              src={future}
               alt="Laundry Service"
               className="w-full h-full object-cover"
             />
@@ -20,7 +24,6 @@ const Future = () => {
           <ul className="text-lg md:text-xl space-y-4 mb-6">
             <li className="flex items-center">
               <span className="inline-block w-6 h-6 mr-2 text-teal-100">
-                {/* You can use an icon from your library */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -77,7 +80,10 @@ const Future = () => {
               Trustworthy local cleaners
             </li>
           </ul>
-          <button className="bg-white text-teal-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-teal-100 transition">
+          <button
+            onClick={handleButtonClick}
+            className="bg-white text-teal-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-teal-100 transition"
+          >
             About us
           </button>
         </div>
