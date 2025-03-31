@@ -5,13 +5,15 @@ import {
   faShieldAlt,
   faMapMarkerAlt,
   faPhoneAlt,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import MyFooter from "../components/MyFooter";
-
+import {Helmet} from "react-helmet-async";
 const Other = () => {
 return (
     <>
+        <Helmet>
+            <title>Andes Laundry - Terms & Conditions</title>
+            <meta name="description" content="Read our terms and conditions for using Andes Laundry services." />
+        </Helmet>
         <div className="container mx-auto p-6 md:p-12 md:mt-6 mt-20">
             <h1 className="bg-blue-700 text-white text-4xl font-bold mb-8 text-center p-4 rounded underline">
                 Terms & Conditions
@@ -268,7 +270,6 @@ return (
                 </ul>
             </section>
         </div>
-        <MyFooter />
     </>
 );
 };
