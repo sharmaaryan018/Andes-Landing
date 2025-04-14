@@ -15,7 +15,7 @@ const ServiceFooter = () => {
               <li><Link to="/services" className="hover:text-blue-400">Pricing</Link></li>
               <li><Link to="/about" className="hover:text-blue-400">About us</Link></li>
               <li><Link to="/other" className="hover:text-blue-400">Terms & Conditions</Link></li>
-              <li><Link to="/other" className="hover:text-blue-400">Privacy Policy</Link></li>
+              <li><Link to="/privacypolicy" className="hover:text-blue-400">Privacy Policy</Link></li>
               <li><Link to="/other" className="hover:text-blue-400">Contact</Link></li>
               <li><Link to="/other" className="hover:text-blue-400">Return and Refund Policy</Link></li>
             </ul>
@@ -29,7 +29,7 @@ const ServiceFooter = () => {
               </div>
               <div className="flex items-center">
                 <FaEnvelope className="mr-2 text-blue-400" />
-                <span>contact@laundryservice.com</span>
+                <span>care@andes.co.in</span>
               </div>
               <div className="flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-blue-400" />

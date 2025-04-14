@@ -14,6 +14,7 @@ import DownloadPage from './pages/DownloadPage';
 import NewServicePage from './pages/NewServicePage';
 import data from './data';
 import ServiceFooter from './components/ServiceFooter';
+import PrivacyPolicy from "./pages/privacypolicy";
 
 function App() {
   const scrollRef = useRef(null);
@@ -51,7 +52,7 @@ function App() {
             <Route path="/working" element={<Working />} />
             <Route path="/andes-assured" element={<AndesAssured />} />
             <Route path="/other" element={<Other />} />
-            <Route path="/privacypolicy" element={<Other />} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/download" element={<DownloadPage />} />
             <Route path="/services" element={<NewServicePage data={data} />} />
             <Route path="*" element={
