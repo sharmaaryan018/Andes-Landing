@@ -1,6 +1,18 @@
 import React from 'react';
-
+import {useCart} from '../components/CartContext'; // Adjust the import path as necessary
 const ServiceCard = ({ service }) => {
+  const { addToCart ,cartItems} = useCart();
+  console.log('Current cart items in ServiceCard:', cartItems); // Debug 5
+
+  const handleAddToCart = () => {
+    console.log('Add to cart button clicked for:', service); // Debug 6
+    try {
+      addToCart(service);
+      console.log('Add to cart function called successfully'); // Debug 7
+    } catch (error) {
+      console.error('Error adding to cart:', error); // Debug 8
+    }
+  };
   const originalPrice = service.unit === 'piece' || service.unit === 'pair' 
     ? service.rateByPiece 
     : service.rateByKg;
@@ -46,8 +58,13 @@ const ServiceCard = ({ service }) => {
               {unitText}
             </span>
           </div>
-          <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all">
+          <button 
+            onClick={() => addToCart(service)}
+
+          className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all">
             Add to Cart
+
+
           </button>
         </div>
       </div>
