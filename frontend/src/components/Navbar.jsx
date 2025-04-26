@@ -64,14 +64,7 @@ const Navbar = () => {
             >
               Services & Pricing
             </a>
-            <a
-              href="/andes-assured"
-              className={`text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium text-lg ${
-                isActive("/andes-assured") ? "text-blue-600 font-semibold" : ""
-              }`}
-            >
-              Andes Assured
-            </a>
+         
             <a
               href="/about"
               className={`text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium text-lg ${
@@ -130,7 +123,7 @@ const Navbar = () => {
               href="https://play.google.com/store/apps/details?id=com.andes.laundry"
               className="bg-blue-600 text-white px-7 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition duration-300 flex items-center space-x-2 text-lg"
             >
-              <span>Book Now</span>
+              <span>Download Now</span>
               <span className="text-lg">→</span>
             </a>
           </div>
@@ -187,14 +180,7 @@ const Navbar = () => {
             >
               Services & Pricing
             </a>
-            <a
-              href="/andes-assured"
-              className={`block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-300 text-lg ${
-                isActive("/andes-assured") ? "bg-blue-50 text-blue-600 font-semibold" : ""
-              }`}
-            >
-              Andes Assured
-            </a>
+           
             <a
               href="/about"
               className={`block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-300 text-lg ${
@@ -246,7 +232,7 @@ const Navbar = () => {
                 href="https://play.google.com/store/apps/details?id=com.andes.laundry"
                 className="block text-center bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
               >
-                Book Now
+                Download App
               </a>
             </div>
           </div>

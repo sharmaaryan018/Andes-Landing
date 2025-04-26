@@ -57,7 +57,7 @@ const OrderConfirmation = () => {
             </div>
             <div>
               <h3 className="font-medium text-gray-700">Email</h3>
-              <p className="text-gray-600">support@andeslaundry.com</p>
+              <p className="text-gray-600">care@andes.co.in</p>
             </div>
           </div>
         </div>

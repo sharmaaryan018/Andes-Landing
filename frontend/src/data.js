@@ -20,7 +20,8 @@ const data = {
     serviceCategories: [
       { id: 0, name: "General", key: "general", discount: 30, noteByKg: "1Kg contains approximately 4 clothes." },
       { id: 1, name: "Dry Cleaning", key: "dry_cleaning", discount: 35, noteByKg: "NOTE: Dry cleaning prices are per piece." },
-      { id: 2, name: "Others", key: "others", discount: 35, noteByKg: "NOTE: Specialized cleaning services." }
+      { id: 2, name: "Shoes", key: "shoes", discount: 25, noteByKg: "NOTE: Special care for all types of footwear." }, // New category
+      { id: 3, name: "Others", key: "others", discount: 35, noteByKg: "NOTE: Specialized cleaning services." }
     ],
     services: [
       {
@@ -132,7 +133,7 @@ const data = {
         "id": 8,
         "name": "SIMPLE SHOES",
         "description": "Cleaning service for casual shoes.",
-        "categories": ["others"],
+        "categories": ["others", "shoes"],
         "rateByPiece": 180,
         "discountedRateByPiece": 125,
         "rateByKg": 0,
@@ -147,13 +148,13 @@ const data = {
         "id": 9,
         "name": "LOAFERS/SNEAKERS",
         "description": "Premium cleaning service for loafers and sneakers.",
-        "categories": ["others"],
+        "categories": ["others","shoes"],
         "rateByPiece": 380,
         "discountedRateByPiece": 265,
         "rateByKg": 0,
         "discountedRateByKg": 0,
         "unit": "pair",
-        "displayName": "Loafers/Sneakers",
+        "displayName": "Loafers/Sneakers(shoes)",
         "customText": "₹380",
         "image": loafersSneakersImage,
         "discount": 35

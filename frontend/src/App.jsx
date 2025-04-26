@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
 import Working from "./pages/Working";
-import AndesAssured from "./pages/AndesAssured";
+// import AndesAssured from "./pages/AndesAssured";
 import "./locomotive-scroll.css";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
@@ -69,7 +69,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/working" element={<Working />} />
-            <Route path="/andes-assured" element={<AndesAssured />} />
+            {/* <Route path="/andes-assured" element={<AndesAssured />} /> */}
             <Route path="/other" element={<Other />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/download" element={<DownloadPage />} />

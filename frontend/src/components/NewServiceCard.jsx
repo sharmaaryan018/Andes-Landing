@@ -1,18 +1,36 @@
-import React from 'react';
-import {useCart} from '../components/CartContext'; // Adjust the import path as necessary
-const ServiceCard = ({ service }) => {
-  const { addToCart ,cartItems} = useCart();
-  console.log('Current cart items in ServiceCard:', cartItems); // Debug 5
+import React, { useState } from 'react';
+import { useCart } from '../components/CartContext';
 
-  const handleAddToCart = () => {
-    console.log('Add to cart button clicked for:', service); // Debug 6
-    try {
-      addToCart(service);
-      console.log('Add to cart function called successfully'); // Debug 7
-    } catch (error) {
-      console.error('Error adding to cart:', error); // Debug 8
+const ServiceCard = ({ service }) => {
+  const { addToCart, removeFromCart, updateQuantity, cartItems } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  
+  // Check if this service is already in cart
+  const cartItem = cartItems.find(item => item.id === service.id);
+  const isInCart = Boolean(cartItem);
+
+  const handleCartAction = () => {
+    if (isInCart) {
+      removeFromCart(service.id);
+    } else {
+      addToCart({ ...service, quantity });
+      setQuantity(1);
     }
   };
+
+  const handleQuantityChange = (e) => {
+    const value = parseInt(e.target.value) || 1;
+    setQuantity(Math.max(1, value));
+  };
+
+  const incrementQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const decrementQuantity = () => {
+    setQuantity(prev => (prev > 1 ? prev - 1 : 1));
+  };
+
   const originalPrice = service.unit === 'piece' || service.unit === 'pair' 
     ? service.rateByPiece 
     : service.rateByKg;
@@ -58,14 +76,46 @@ const ServiceCard = ({ service }) => {
               {unitText}
             </span>
           </div>
-          <button 
-            onClick={() => addToCart(service)}
-
-          className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all">
-            Add to Cart
-
-
-          </button>
+          
+          <div className="flex items-center">
+            {isInCart && (
+              <div className="flex items-center mr-2">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    updateQuantity(service.id, cartItem.quantity - 1);
+                  }}
+                  className="w-6 h-6 flex items-center justify-center border border-gray-300 rounded-l-md bg-gray-100 hover:bg-gray-200 text-sm"
+                  disabled={cartItem.quantity <= 1}
+                >
+                  -
+                </button>
+                <span className="w-8 h-6 flex items-center justify-center border-t border-b border-gray-300 bg-white text-sm">
+                  {cartItem.quantity}
+                </span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    updateQuantity(service.id, cartItem.quantity + 1);
+                  }}
+                  className="w-6 h-6 flex items-center justify-center border border-gray-300 rounded-r-md bg-gray-100 hover:bg-gray-200 text-sm"
+                >
+                  +
+                </button>
+              </div>
+            )}
+            
+            <button 
+              onClick={handleCartAction}
+              className={`px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all ${
+                isInCart 
+                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                  : 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white'
+              }`}
+            >
+              {isInCart ? 'Remove' : 'Add to Cart'}
+            </button>
+          </div>
         </div>
       </div>
     </div>
