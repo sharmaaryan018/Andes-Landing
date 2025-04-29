@@ -107,7 +107,7 @@ const OrderDetails = () => {
           <div className="border-t border-gray-200 pt-4">
             <h2 className="text-lg font-medium text-gray-800 mb-2">Order Summary</h2>
             <div className="space-y-2">
-              <div className="flex justify-between">
+              <div className="flex justify-between ">
                 <span>Subtotal:</span>
                 <span>₹{order.subtotal}</span>
               </div>
@@ -115,10 +115,14 @@ const OrderDetails = () => {
                 <span>Delivery Fee:</span>
                 <span>₹{order.deliveryFee}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between ">
                 <span>Convenience Fee:</span>
                 <span>₹{order.convenienceFee}</span>
               </div>
+              <div className="flex justify-between items-center px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+  <span className="text-gray-700 font-medium">Discount Amount:</span>
+  <span className="text-green-600 font-semibold">₹{order.discountAmount}</span>
+</div>
               {order.paperBag && (
                 <div className="flex justify-between">
                   <span>Paper Bag:</span>
