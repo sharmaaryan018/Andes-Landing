@@ -74,7 +74,7 @@ function App() {
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/download" element={<DownloadPage />} />
             <Route path="/services" element={<NewServicePage data={data} />} />
-            <Route path="/cart" element={<CartPage />} />
+            {/* <Route path="/cart" element={<CartPage />} /> */}
             {/* <Route path="/test" element={<TestFirestore />} /> */}
             {/* <Route path="/show-users" element={<ShowUsers />} /> */}
             {/* <Route path="/register" element={<Register />} /> */}

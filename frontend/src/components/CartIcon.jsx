@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useCart } from './CartContext';
 
-const CartIcon = () => {
+const CartIcon = ({ onClick }) => {
   const { cartCount } = useCart();
 
   return (
-    <Link to="/cart" className="relative">
+    <button onClick={onClick} className="relative focus:outline-none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-8 w-8 text-gray-700 hover:text-blue-600"
@@ -26,7 +25,7 @@ const CartIcon = () => {
           {cartCount}
         </span>
       )}
-    </Link>
+    </button>
   );
 };
 
