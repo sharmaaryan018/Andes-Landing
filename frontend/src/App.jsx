@@ -29,6 +29,7 @@ import TrackOrder from "./pages/OrderTrackingPage";
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from "./components/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import SOP from "./pages/SOP";
 
 function App() {
   const scrollRef = useRef(null);
@@ -69,6 +70,8 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/working" element={<Working />} />
+            <Route path="/working/sop" element={<SOP />} />
+
             {/* <Route path="/andes-assured" element={<AndesAssured />} /> */}
             <Route path="/other" element={<Other />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />

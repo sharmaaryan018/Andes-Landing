@@ -31,7 +31,7 @@ const ServicesPage = ({ data }) => {
         <title>Andes Laundry - New Services</title>
         <meta name="description" content="Explore our new laundry services and pricing." />
       </Helmet>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 mt-16">
         <div className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Page Header */}
