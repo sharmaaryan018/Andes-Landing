@@ -52,7 +52,9 @@ const ServiceCard = ({ service }) => {
       
       {/* Service Image */}
       <div className="h-48 overflow-hidden">
-        <img 
+        <img
+          loading="lazy"
+
           src={service.image} 
           alt={service.displayName} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"

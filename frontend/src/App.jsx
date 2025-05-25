@@ -9,7 +9,6 @@ import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import Other from "./pages/Other";
 import './App.css';
-import IntercomComponent from './intercom'; 
 import DownloadPage from './pages/DownloadPage';
 import NewServicePage from './pages/NewServicePage';
 import data from './data';
@@ -112,7 +111,6 @@ function App() {
         <ServiceFooter />
       </div>
 
-      <IntercomComponent />
     </>
   );
 }
