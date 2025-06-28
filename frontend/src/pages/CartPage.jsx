@@ -14,7 +14,9 @@ const CartSidebar = ({ isOpen, onClose }) => {
     updateQuantity,
     cartTotal,
     cartCount,
-    clearCart
+    clearCart,
+    isInstantDeliveryMode,
+    toggleInstantDeliveryMode,hasAnyPremiumItems
   } = useCart();
 
   const [showAddressForm, setShowAddressForm] = useState(false);
@@ -27,12 +29,9 @@ const CartSidebar = ({ isOpen, onClose }) => {
   const [showCoupons, setShowCoupons] = useState(false);
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponCode, setCouponCode] = useState('');
+  
   const navigate = useNavigate();
   const sidebarRef = useRef();
-
- 
-
-
 
   // Available coupons
   const availableCoupons = [
@@ -68,27 +67,36 @@ const CartSidebar = ({ isOpen, onClose }) => {
       minOrder: 800,
       type: 'percentage',
       autoApply: false
+    },
+    // Add instant delivery free coupon
+    {
+      code: 'INSTANT_FREE_DELIVERY',
+      description: 'Free delivery on Instant Delivery orders above ₹199',
+      discount: 25,
+      minOrder: 199,
+      type: 'delivery',
+      autoApply: true,
+      onlyForInstantDelivery: true
     }
   ];
 
-    // Close sidebar when clicking outside
-    useEffect(() => {
-      const handleClickOutside = (event) => {
+  // Close sidebar when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Don't close if clicking on a modal
+      if (event.target.closest('.modal-container')) {
+        return;
+      }
+      if (isOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
 
-          // Don't close if clicking on a modal
-        if (event.target.closest('.modal-container')) {
-          return;
-        }
-        if (isOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-          onClose();
-        }
-      };
-  
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [isOpen, onClose]);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('user'));
@@ -99,20 +107,47 @@ const CartSidebar = ({ isOpen, onClose }) => {
     }
     
     // Check for auto-apply coupons
-
     // Check if current applied coupon is still valid
     if (appliedCoupon && cartTotal < appliedCoupon.minOrder) {
       setAppliedCoupon(null);
       toast(`Coupon ${appliedCoupon.code} removed as order value dropped below ₹${appliedCoupon.minOrder}`);
     }
+    
     checkAutoApplyCoupons();
-  }, [cartTotal]);
+  }, [cartTotal, isInstantDeliveryMode]); // Use isInstantDeliveryMode from context
 
   const checkAutoApplyCoupons = () => {
-    const autoCoupon = availableCoupons.find(c => c.autoApply && cartTotal >= c.minOrder);
-    if (autoCoupon && !appliedCoupon) {
-      setAppliedCoupon(autoCoupon);
-      toast.success(`Coupon applied: ${autoCoupon.description}`);
+    // Remove any instant delivery coupon if instant delivery is not selected
+    if (!isInstantDeliveryMode && appliedCoupon?.onlyForInstantDelivery) {
+      setAppliedCoupon(null);
+    }
+
+    // First, check for instant delivery free delivery coupon
+    if (isInstantDeliveryMode && cartTotal >= 199) {
+      const instantDeliveryCoupon = availableCoupons.find(
+        c => c.code === 'INSTANT_FREE_DELIVERY' && c.autoApply && cartTotal >= c.minOrder
+      );
+      
+      if (instantDeliveryCoupon && 
+          (!appliedCoupon || appliedCoupon.code !== instantDeliveryCoupon.code)) {
+        setAppliedCoupon(instantDeliveryCoupon);
+        toast.success(`Free delivery applied: Your order is eligible for free instant delivery!`);
+        return;
+      }
+    }
+
+    // If no instant delivery coupon applied, check other auto-apply coupons
+    if (!appliedCoupon || appliedCoupon.onlyForInstantDelivery) {
+      const autoCoupon = availableCoupons.find(
+        c => c.autoApply && 
+             cartTotal >= c.minOrder && 
+             !c.onlyForInstantDelivery
+      );
+      
+      if (autoCoupon) {
+        setAppliedCoupon(autoCoupon);
+        toast.success(`Coupon applied: ${autoCoupon.description}`);
+      }
     }
   };
 
@@ -146,7 +181,6 @@ const CartSidebar = ({ isOpen, onClose }) => {
   };
   const roundToTwo = (num) => Math.round(num * 100) / 100;
 
-
   const applyCoupon = (code) => {
     // Check if manually entering code
     console.log('Coupon code:', code);  
@@ -168,6 +202,12 @@ const CartSidebar = ({ isOpen, onClose }) => {
     // Check if already applied
     if (appliedCoupon && appliedCoupon.code === code.code) {
       toast('This coupon is already applied');
+      return;
+    }
+    
+    // Check if this is an instant delivery only coupon
+    if (code.onlyForInstantDelivery && !isInstantDeliveryMode) {
+      toast.error('This coupon is only available for instant delivery orders');
       return;
     }
     
@@ -197,17 +237,21 @@ const CartSidebar = ({ isOpen, onClose }) => {
     } else if (type === 'percentage') {
       const calculatedDiscount = cartTotal * discount;
       const finalDiscount = maxDiscount ? Math.min(calculatedDiscount, maxDiscount) : calculatedDiscount;
-      return roundToTwo(finalDiscount);    } else if (type === 'delivery') {
+      return roundToTwo(finalDiscount);    
+    } else if (type === 'delivery') {
       return 0; // Delivery discount is handled separately
     }
     return 0;
   };
 
   const calculateDeliveryFee = () => {
+    // If coupon provides free delivery or it's a qualifying instant delivery order
     if (appliedCoupon?.type === 'delivery' || appliedCoupon?.code === 'MEGH_SHAH') {
       return 0;
     }
-    return 30;
+    
+    // Regular delivery fee is 30, instant delivery fee is 25
+    return isInstantDeliveryMode ? 25 : 30;
   };
 
   // Calculate total amount and check minimum order requirement
@@ -284,10 +328,14 @@ const CartSidebar = ({ isOpen, onClose }) => {
       deliveryFee: deliveryFee,
       convenienceFee: 8,
       paperBag: paperBag,
+      orderType: isInstantDeliveryMode ? 'rush_hour' : hasAnyPremiumItems ? 'premium_only' : 'standard',
       totalItems: cartCount,
       paperBagFee: paperBagFee,
-      pickupTime: "6:00 PM - 10:00 PM",
-      ultraFastDelivery: false,
+      pickupTime: isInstantDeliveryMode? " after 2:00 PM" :"6:00 PM - 10:00 PM",
+      // Use the context value for instant delivery mode
+      isInstantDelivery: isInstantDeliveryMode,
+      // If instant delivery, set a faster delivery window
+      deliveryWindow: isInstantDeliveryMode ? "Same day by 10:00 PM" : hasAnyPremiumItems ? '72 hrs': "Standard (24-48 hours)",
       discountAmount: discountAmount,
       appliedCoupon: appliedCoupon?.code || null,
       totalCost: cartTotal + deliveryFee + 8 + paperBagFee - discountAmount,
@@ -320,6 +368,29 @@ const CartSidebar = ({ isOpen, onClose }) => {
     }
   };
 
+  // Get the current time to check if instant delivery is available (12am to 2pm)
+  const checkInstantDeliveryAvailability = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    return hours >= 0 && hours < 14; // Between 12am and 2pm
+  };
+
+  // Calculate time remaining for instant delivery
+  const calculateTimeRemaining = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    
+    const totalMinutesRemaining = (14 - hours) * 60 - minutes;
+    const hoursRemaining = Math.floor(totalMinutesRemaining / 60);
+    const minsRemaining = totalMinutesRemaining % 60;
+    
+    return `${hoursRemaining}h ${minsRemaining}m`;
+  };
+
+  // Check if instant delivery is available
+  const instantDeliveryAvailable = checkInstantDeliveryAvailability();
+  const timeRemaining = calculateTimeRemaining();
 
   return (
     <div className={`fixed inset-0 z-50 ${isOpen ? 'block' : 'hidden'}`}>
@@ -366,6 +437,55 @@ const CartSidebar = ({ isOpen, onClose }) => {
               </div>
             ) : (
               <div className="space-y-6">
+                {/* Instant Delivery Option - Only show if available */}
+                {instantDeliveryAvailable && (
+                  <div className="bg-gradient-to-r from-amber-50 to-amber-100 p-4 rounded-xl border border-amber-200 relative">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className="mr-3 text-amber-500 text-xl">⚡</div>
+                        <div>
+                          <h3 className="font-medium text-gray-800">Instant Delivery</h3>
+                          <p className="text-xs text-gray-600">Order now, receive by 10:00 PM today</p>
+                          <p className="text-xs text-amber-600 font-medium mt-1">
+                            {cartTotal >= 199 ? 'Free delivery on orders above ₹199' : 'Delivery charges: ₹25'}
+                          </p>
+                          <p className="text-xs text-amber-800">Offer ends in {timeRemaining}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center">
+                        <label className="inline-flex items-center cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={isInstantDeliveryMode}
+                            onChange={(e) => {
+                              const success = toggleInstantDeliveryMode(e.target.checked);
+                              if (!success) {
+                                e.preventDefault();
+                              }
+                            }}
+                            disabled={cartItems.length > 0}
+                            className="sr-only peer"
+                          />
+                          <div className={`relative w-11 h-6 ${cartItems.length > 0 ? 'bg-gray-300' : 'bg-gray-200'} 
+                            peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-300 rounded-full peer 
+                            peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full 
+                            peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] 
+                            after:start-[2px] after:bg-white after:border-gray-300 after:border 
+                            after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600`}></div>
+                        </label>
+                      </div>
+                    </div>
+                    
+                    {cartItems.length > 0 && (
+                      <div className="mt-2 text-xs text-amber-700 bg-amber-50 p-2 rounded">
+                        {isInstantDeliveryMode 
+                          ? "Your cart contains instant delivery items. To switch to regular delivery, please clear your cart first."
+                          : "Your cart contains regular delivery items. To switch to instant delivery, please clear your cart first."}
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {/* Cart Items */}
                 <div className="space-y-4">
                   {cartItems.map((item) => (
@@ -379,7 +499,12 @@ const CartSidebar = ({ isOpen, onClose }) => {
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between">
-                          <h3 className="font-medium text-gray-800">{item.displayName}</h3>
+                          <h3 className="font-medium text-gray-800">
+                            {item.displayName}
+                            {(item.isInstantDelivery || item.instantDelivery) && (
+                              <span className="ml-2 text-xs text-amber-600 font-medium">⚡ Same Day</span>
+                            )}
+                          </h3>
                           <button 
                             onClick={() => removeFromCart(item.id)} 
                             className="text-red-500 hover:text-red-700 text-sm"
@@ -455,9 +580,14 @@ const CartSidebar = ({ isOpen, onClose }) => {
                     )}
 
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Delivery</span>
+                      <span className="text-gray-600">
+                        {isInstantDeliveryMode ? 'Instant Delivery' : 'Delivery'}
+                        {isInstantDeliveryMode && cartTotal >= 199 && (
+                          <span className="text-xs text-green-600 block">Free on orders above ₹199</span>
+                        )}
+                      </span>
                       <span className="font-medium">
-                        {appliedCoupon?.type === 'delivery' ? (
+                        {deliveryFee === 0 ? (
                           <span className="text-green-600">FREE</span>
                         ) : (
                           `₹${deliveryFee}`
@@ -495,76 +625,73 @@ const CartSidebar = ({ isOpen, onClose }) => {
                   </div>
 
                   {/* Coupon Section */}
-                 
-                        {/* Coupon Section */}
-                        {/* Modern Coupon Section */}
-        <div className="mt-6 space-y-3">
-          {!appliedCoupon ? (
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-4 rounded-xl border border-gray-100 shadow-sm">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="font-medium text-gray-800">Have a coupon code?</h3>
-                <button 
-                  onClick={() => setShowCoupons(true)}
-                  className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center"
-                >
-                  View All Coupons
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-              
-              <div className="flex shadow-sm rounded-lg overflow-hidden">
-                <input
-                  type="text"
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
-                  placeholder="Enter coupon code"
-                  className="flex-grow px-4 py-3 text-sm border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-                />
-                <button
-                  onClick={() => applyCoupon(couponCode)}
-                  disabled={!couponCode.trim()}
-                  className={`px-5 py-3 text-sm font-medium text-white transition-colors ${
-                    couponCode.trim() 
-                      ? 'bg-indigo-600 hover:bg-indigo-700' 
-                      : 'bg-gray-400 cursor-not-allowed'
-                  }`}
-                >
-                  Apply
-                </button>
-      </div>
-    </div>
-  ) : (
-    <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100 shadow-sm relative">
-      <div className="flex justify-between items-start">
-        <div>
-          <div className="flex items-center mb-1">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            <span className="font-semibold text-green-800">Coupon Applied</span>
-          </div>
-          <p className="text-green-700 text-sm">{appliedCoupon.description}</p>
-        </div>
-        <button
-          onClick={removeCoupon}
-          className="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50 transition-colors"
-          aria-label="Remove coupon"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </button>
-      </div>
-      
-      {/* Coupon code badge */}
-      <div className="absolute -top-2 -right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
-        {appliedCoupon.code}
-      </div>
-    </div>
-  )}
-</div>
+                  <div className="mt-6 space-y-3">
+                    {!appliedCoupon ? (
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="font-medium text-gray-800">Have a coupon code?</h3>
+                          <button 
+                            onClick={() => setShowCoupons(true)}
+                            className="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center"
+                          >
+                            View All Coupons
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </button>
+                        </div>
+                        
+                        <div className="flex shadow-sm rounded-lg overflow-hidden">
+                          <input
+                            type="text"
+                            value={couponCode}
+                            onChange={(e) => setCouponCode(e.target.value)}
+                            placeholder="Enter coupon code"
+                            className="flex-grow px-4 py-3 text-sm border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+                          />
+                          <button
+                            onClick={() => applyCoupon(couponCode)}
+                            disabled={!couponCode.trim()}
+                            className={`px-5 py-3 text-sm font-medium text-white transition-colors ${
+                              couponCode.trim() 
+                                ? 'bg-indigo-600 hover:bg-indigo-700' 
+                                : 'bg-gray-400 cursor-not-allowed'
+                            }`}
+                          >
+                            Apply
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100 shadow-sm relative">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <div className="flex items-center mb-1">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                              </svg>
+                              <span className="font-semibold text-green-800">Coupon Applied</span>
+                            </div>
+                            <p className="text-green-700 text-sm">{appliedCoupon.description}</p>
+                          </div>
+                          <button
+                            onClick={removeCoupon}
+                            className="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50 transition-colors"
+                            aria-label="Remove coupon"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
+                        
+                        {/* Coupon code badge */}
+                        <div className="absolute -top-2 -right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+                          {appliedCoupon.code}
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   {/* Address and Mobile */}
                   <div className="mt-4 space-y-3">
@@ -629,14 +756,18 @@ const CartSidebar = ({ isOpen, onClose }) => {
                     className={`mt-6 w-full py-3 rounded-lg transition duration-200 ${
                       isLoading || !meetsMinimum
                         ? 'bg-gray-400 cursor-not-allowed'
-                        : 'bg-blue-600 hover:bg-blue-700 text-white'
+                        : isInstantDeliveryMode 
+                          ? 'bg-amber-600 hover:bg-amber-700 text-white' 
+                          : 'bg-blue-600 hover:bg-blue-700 text-white'
                     }`}
                   >
                     {isLoading
                       ? 'Processing...'
                       : !meetsMinimum
                         ? `Add ₹${50 - totalAmount} more`
-                        : 'Proceed to Checkout'}
+                        : isInstantDeliveryMode 
+                          ? '⚡ Instant Checkout'
+                          : 'Proceed to Checkout'}
                   </button>
                 </div>
               </div>
@@ -705,24 +836,38 @@ const CartSidebar = ({ isOpen, onClose }) => {
             </button>
             <h3 className="text-lg font-semibold mb-4">Available Coupons</h3>
             <div className="space-y-4">
-              {availableCoupons.map((coupon) => (
+              {availableCoupons.filter(coupon => 
+                // Only show instant delivery coupons when instant delivery is selected
+                !coupon.onlyForInstantDelivery || isInstantDeliveryMode
+              ).map((coupon) => (
                 <div key={coupon.code} className="border border-gray-200 rounded-lg p-4">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-medium text-gray-800">{coupon.code}</h4>
+                      <h4 className="font-medium text-gray-800">
+                        {coupon.code}
+                        {coupon.onlyForInstantDelivery && (
+                          <span className="ml-2 text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full">
+                            Instant Only
+                          </span>
+                        )}
+                      </h4>
                       <p className="text-sm text-gray-600">{coupon.description}</p>
                       <p className="text-xs text-gray-500 mt-1">Min. order: ₹{coupon.minOrder}</p>
                     </div>
                     <button
                       onClick={() => applyCoupon(coupon)}
-                      disabled={cartTotal < coupon.minOrder}
+                      disabled={cartTotal < coupon.minOrder || (coupon.onlyForInstantDelivery && !isInstantDeliveryMode)}
                       className={`px-3 py-1 rounded text-sm ${
-                        cartTotal < coupon.minOrder
+                        cartTotal < coupon.minOrder || (coupon.onlyForInstantDelivery && !isInstantDeliveryMode)
                           ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
                           : 'bg-blue-600 text-white hover:bg-blue-700'
                       }`}
                     >
-                      {cartTotal < coupon.minOrder ? 'Not eligible' : 'Apply'}
+                      {cartTotal < coupon.minOrder 
+                        ? 'Not eligible' 
+                        : (coupon.onlyForInstantDelivery && !isInstantDeliveryMode)
+                          ? 'Instant only'
+                          : 'Apply'}
                     </button>
                   </div>
                 </div>

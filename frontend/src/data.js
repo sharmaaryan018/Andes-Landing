@@ -1,4 +1,8 @@
 // Import images
+
+import { collection, query, where, getDocs, onSnapshot } from 'firebase/firestore';
+import { db } from './firebase';
+
 import ironImage from './assets/iron.jpg';
 import washFoldImage from './assets/wash_fold.jpg';
 import washIronImage from './assets/wash_iron.jpg';
@@ -25,6 +29,17 @@ import shirtTshirt from './assets/shirtTshirt.jpg';
 import jeansImage from './assets/jeans.jpg';
 import blanketImage from './assets/singleBlanket.jpg';
 import doubleBlanketImage from './assets/doubleBlanket.jpg';
+import curtain from './assets/curtain.jpg';
+import carpet from './assets/carpet.jpg';
+import jerkin from './assets/jerkin.jpg';
+import pillowCover from './assets/pillow_cover.jpg';
+import LadiesSuit from './assets/ladies_suit_3Piece.jpg';
+import LadiesSuit2 from './assets/ladies_suit_2Piece.jpg';
+
+
+
+
+
 const data = {
     serviceModes: [
       { id: 0, name: "By Piece/Pair", key: "piece" },
@@ -445,6 +460,50 @@ const data = {
 
 
     ],
+
+    
+       premiumServices: [],
+ 
+
+    // Add new array for instant delivery services
+  instantDeliveryServices: [
+    {
+      "id": 101,
+      "name": "Wash and Dry",
+      "description": "Quick turnaround wash and dry service with same day delivery when ordered before 2PM.",
+      "categories": ["general", "instant_delivery"],
+      "rateByPiece": 0,
+      "discountedRateByPiece": 0,
+      "rateByKg": 110,
+      "discountedRateByKg": 85,
+      "unit": "kg",
+      "displayName": "Wash and Dry",
+      "customText": "₹110",
+      "image": washFoldImage,
+      "discount": 30,
+      "isInstantDelivery": true
+    },
+    {
+      "id": 102,
+      "name": "INSTANT IRON",
+      "description": "Express ironing service with same day delivery, perfect for last-minute needs.",
+      "categories": ["general", "instant_delivery"],
+      "rateByPiece": 24,
+      "discountedRateByPiece": 18,
+      "rateByKg": 0,
+      "discountedRateByKg": 0,
+      "unit": "piece",
+      "displayName": "Express Iron",
+      "customText": "₹24",
+      "image": ironImage,
+      "discount": 33,
+      "isInstantDelivery": true
+    }
+  ],
+
+
+
+
     donationService: {
       name: "Clothing Donation",
       description: "Help those in need with your old clothes",
@@ -452,6 +511,186 @@ const data = {
       unit: "donation",
       icon: "♥",
       image: "donation.jpg"
+    },
+
+    // Function to fetch services from Firestore 
+    async fetchPremiumServices() {
+      try {
+        // Query documents with category starting with "premium"
+        const q1 = query(
+          collection(db, 'prices'),
+          where('category', '==', 'premiumGeneral')
+        );
+        
+        const q2 = query(
+          collection(db, 'prices'),
+          where('category', '==', 'premiumOthers')
+        );
+
+        const [querySnapshot1, querySnapshot2] = await Promise.all([
+          getDocs(q1),
+          getDocs(q2)
+        ]);
+
+        const premiumServices = [];
+        
+        // Process premiumGeneral services
+        querySnapshot1.forEach((doc) => {
+          const serviceData = doc.data();
+          const premiumService = this.transformFirebaseService(doc.id, serviceData);
+          premiumServices.push(premiumService);
+        });
+
+        // Process premiumOthers services
+        querySnapshot2.forEach((doc) => {
+          const serviceData = doc.data();
+          const premiumService = this.transformFirebaseService(doc.id, serviceData);
+          premiumServices.push(premiumService);
+        });
+        
+        // Update the premiumServices array
+        this.premiumServices = premiumServices;
+        return premiumServices;
+        
+      } catch (error) {
+        console.error('Error fetching premium services from prices collection:', error);
+        return [];
+      }
+    },
+
+    // Function to transform Firebase service data to match your structure
+    transformFirebaseService(docId, serviceData) {
+      // Map category to appropriate array
+      const categoryMap = {
+        'premiumGeneral': ['premium', 'general'],
+        'premiumOthers': ['premium', 'others']
+      };
+
+      // Calculate discount percentage
+      const originalRate = serviceData.originalRateByPiece || 0;
+      const currentRate = serviceData.rateByPiece || 0;
+      const discountPercentage = serviceData.discountPercentage || 
+        (originalRate > 0 ? Math.round(((originalRate - currentRate) / originalRate) * 100) : 0);
+
+      return {
+        id: `premium_${docId}`,
+        name: serviceData.serviceName?.toUpperCase() || 'PREMIUM SERVICE',
+        description: `Premium ${serviceData.serviceName?.toLowerCase() || 'service'} with enhanced care and faster delivery.`,
+        categories: categoryMap[serviceData.category] || ['premium'],
+        rateByPiece: originalRate,
+        discountedRateByPiece: currentRate,
+        rateByKg: serviceData.originalRateByKg || 0,
+        discountedRateByKg: serviceData.rateByKg || 0,
+        unit: serviceData.unit || "piece",
+        displayName: `Premium ${serviceData.serviceName || 'Service'}`,
+        customText: `₹${currentRate}`,
+        // Use Cloudinary image if imagePublicId exists, otherwise use appropriate fallback
+        image:  
+          this.getDefaultImageForService(serviceData.serviceName),
+        discount: discountPercentage,
+        isPremium: true,
+        features: serviceData.features || ['Premium Quality', 'Fast Delivery', 'Expert Care'],
+        deliveryTime: serviceData.deliveryTime || "24-48 hours",
+        priority: serviceData.priority || 1,
+        createdAt: serviceData.createdAt,
+        updatedAt: serviceData.updatedAt
+      };
+    },
+
+    // Function to get default image based on service name
+    getDefaultImageForService(serviceName) {
+      if (!serviceName) return bedsheetSingleImage;
+      
+      const serviceNameLower = serviceName.toLowerCase();
+      
+      if (serviceNameLower.includes('kurta') || serviceNameLower.includes('kurti')) return Kurta;
+      if (serviceNameLower.includes('saree')) return sareeImage;
+      if (serviceNameLower.includes('shirt')) return shirtTshirt;
+      if (serviceNameLower.includes('pant') || serviceNameLower.includes('trouser')) return pantTrouser;
+      if (serviceNameLower.includes('jacket')) return jacket;
+      if (serviceNameLower.includes('coat')) return blazersImage;
+
+      if (serviceNameLower.includes('sweater')) return sweater;
+      if (serviceNameLower.includes('hoodie')) return hoodiee;
+      if (serviceNameLower.includes('jean')) return jeansImage;
+      if (serviceNameLower.includes('short')) return shorts;
+      if (serviceNameLower.includes('pyjama')) return pyjama;
+      if (serviceNameLower.includes('blazer')) return blazersImage;
+      if (serviceNameLower.includes('sherwani')) return sherwani;
+      if (serviceNameLower.includes('blouse')) return blouseImage;
+      if (serviceNameLower.includes('uniform')) return uniformImage;
+      if (serviceNameLower.includes('blanket')) return blanketImage;
+      if (serviceNameLower.includes('bedsheet')) return bedsheetSingleImage;
+      if (serviceNameLower.includes('curtain')) return curtain;
+      if (serviceNameLower.includes('carpet')) return carpet;
+      if (serviceNameLower.includes('jerkin')) return jerkin;
+      if (serviceNameLower.includes('pillow cover')) return pillowCover;
+      if (serviceNameLower.includes('ladies suit(2piece)') || serviceNameLower.includes('2 piece suit')) return LadiesSuit2;
+
+      if (serviceNameLower.includes('ladies suit') || serviceNameLower.includes('3 piece suit')) return LadiesSuit;
+      if (serviceNameLower.includes('shoes')) return simpleShoesImage;
+      if (serviceNameLower.includes('gown') || serviceNameLower.includes('nighty')) return nightyGown;
+      
+      // Default fallback
+      return ironImage;
+    },
+
+    // Function to listen for real-time updates from "prices" collection
+    subscribeToPremiumServices(callback) {
+      const q1 = query(
+        collection(db, 'prices'),
+        where('category', '==', 'premiumGeneral')
+      );
+      
+      const q2 = query(
+        collection(db, 'prices'),
+        where('category', '==', 'premiumOthers')
+      );
+
+      // Subscribe to both queries
+      const unsubscribe1 = onSnapshot(q1, () => this.handleRealtimeUpdate(callback));
+      const unsubscribe2 = onSnapshot(q2, () => this.handleRealtimeUpdate(callback));
+
+      // Return combined unsubscribe function
+      return () => {
+        unsubscribe1();
+        unsubscribe2();
+      };
+    },
+
+    // Handle real-time updates
+    async handleRealtimeUpdate(callback) {
+      try {
+        const services = await this.fetchPremiumServices();
+        if (callback) callback(services);
+      } catch (error) {
+        console.error('Error handling real-time update:', error);
+        if (callback) callback([]);
+      }
+    },
+
+    // Function to get all services (regular + premium + instant)
+    getAllServices() {
+      return [
+        ...this.services,
+        ...this.instantDeliveryServices,
+        ...this.premiumServices
+      ];
+    },
+
+    // Function to get services by category
+    getServicesByCategory(category) {
+      const allServices = this.getAllServices();
+      return allServices.filter(service => 
+        service.categories && service.categories.includes(category)
+      );
+    },
+
+    // Function to get premium services by type
+    getPremiumServicesByType(type) {
+      return this.premiumServices.filter(service => 
+        service.categories.includes(type)
+      );
     }
   };
   export default data; // Export as default
