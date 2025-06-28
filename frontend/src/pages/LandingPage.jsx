@@ -106,7 +106,7 @@ const LandingPage = () => {
               </div>
               <div className="flex items-center shadow-white p-2 md:p-4 rounded-lg bg-white">
                 <a
-                  href="#"
+                  href="https://apps.apple.com/in/app/andes/id6747010488"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"

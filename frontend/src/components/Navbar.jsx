@@ -67,7 +67,7 @@ const Navbar = () => {
                   isActive("/services") ? "text-blue-600 font-semibold" : ""
                 }`}
               >
-                Services & Pricing
+                Order Now
               </Link>
            
               <Link
@@ -124,7 +124,7 @@ const Navbar = () => {
               )}
               
               <a
-                href="https://play.google.com/store/apps/details?id=com.andes.laundry"
+                href="https://api.whatsapp.com/send/?phone=8626076578&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-7 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition duration-300 flex items-center space-x-2 text-lg"
