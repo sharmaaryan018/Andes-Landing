@@ -1,5 +1,4 @@
 // Import images
-
 import { collection, query, where, getDocs, onSnapshot } from 'firebase/firestore';
 import { db } from './firebase';
 
@@ -33,9 +32,8 @@ import curtain from './assets/curtain.jpg';
 import carpet from './assets/carpet.jpg';
 import jerkin from './assets/jerkin.jpg';
 import pillowCover from './assets/pillow_cover.jpg';
-import LadiesSuit from './assets/ladies_suit_3Piece.jpg';
-import LadiesSuit2 from './assets/ladies_suit_2Piece.jpg';
-
+import LadiesSuit from './assets/ladies_suit_3piece.jpg';
+import LadiesSuit2 from './assets/ladies_suit_2piece.jpg';
 
 
 
@@ -462,7 +460,7 @@ const data = {
     ],
 
     
-       premiumServices: [],
+    premiumServices: [],
  
 
     // Add new array for instant delivery services
