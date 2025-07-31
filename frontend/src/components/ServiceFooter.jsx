@@ -14,10 +14,11 @@ const ServiceFooter = () => {
               <li><Link to="/working" className="hover:text-blue-400">How it works</Link></li>
               <li><Link to="/services" className="hover:text-blue-400">Pricing</Link></li>
               <li><Link to="/about" className="hover:text-blue-400">About us</Link></li>
-              <li><Link to="/other" className="hover:text-blue-400">Terms & Conditions</Link></li>
-              <li><Link to="/privacypolicy" className="hover:text-blue-400">Privacy Policy</Link></li>
-              <li><Link to="/other" className="hover:text-blue-400">Contact</Link></li>
-              <li><Link to="/other" className="hover:text-blue-400">Return and Refund Policy</Link></li>
+              <li><Link to="/terms_conditions" className="hover:text-blue-400">Terms & Conditions</Link></li>
+              <li><Link to="/privacy_policy" className="hover:text-blue-400">Privacy Policy</Link></li>
+              <li><Link to="/refund_policy" className="hover:text-blue-400">Refund Policy</Link></li>
+              <li><Link to="/return_policy" className="hover:text-blue-400">Return Policy</Link></li>
+              <li><Link to="/about" className="hover:text-blue-400">Contact</Link></li>
             </ul>
           </div>
           <div>

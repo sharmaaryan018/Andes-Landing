@@ -7,7 +7,7 @@ import Working from "./pages/Working";
 import "./locomotive-scroll.css";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import Other from "./pages/Other";
+import TermsAndConditions from "./pages/TermsAndConditions";
 import './App.css';
 import DownloadPage from './pages/DownloadPage';
 import NewServicePage from './pages/NewServicePage';
@@ -27,6 +27,8 @@ import OrderHistory from "./pages/OrderHistoryPage";
 import TrackOrder from "./pages/OrderTrackingPage";
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from "./components/AuthContext";
+import RefundPolicy from "./pages/RefundPolicy";
+import ReturnPolicy from "./pages/ReturnPolicy";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SOP from "./pages/SOP";
 
@@ -72,8 +74,10 @@ function App() {
             <Route path="/working/sop" element={<SOP />} />
 
             {/* <Route path="/andes-assured" element={<AndesAssured />} /> */}
-            <Route path="/other" element={<Other />} />
-            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/terms_conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+            <Route path="/refund_policy" element={<RefundPolicy />} />
+            <Route path="/return_policy" element={<ReturnPolicy />} />
             <Route path="/download" element={<DownloadPage />} />
             <Route path="/services" element={<NewServicePage data={data} />} />
             {/* <Route path="/cart" element={<CartPage />} /> */}
