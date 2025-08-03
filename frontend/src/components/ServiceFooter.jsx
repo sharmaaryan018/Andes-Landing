@@ -18,6 +18,7 @@ const ServiceFooter = () => {
               <li><Link to="/privacy_policy" className="hover:text-blue-400">Privacy Policy</Link></li>
               <li><Link to="/refund_policy" className="hover:text-blue-400">Refund Policy</Link></li>
               <li><Link to="/return_policy" className="hover:text-blue-400">Return Policy</Link></li>
+              <li><Link to="/shipping_policy" className="hover:text-blue-400">Shipping Policy</Link></li>
               <li><Link to="/about" className="hover:text-blue-400">Contact</Link></li>
             </ul>
           </div>

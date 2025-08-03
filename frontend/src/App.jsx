@@ -30,6 +30,7 @@ import { AuthProvider } from "./components/AuthContext";
 import RefundPolicy from "./pages/RefundPolicy";
 import ReturnPolicy from "./pages/ReturnPolicy";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ShippingPolicy from "./pages/ShippingPolicy";
 import SOP from "./pages/SOP";
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
             <Route path="/privacy_policy" element={<PrivacyPolicy />} />
             <Route path="/refund_policy" element={<RefundPolicy />} />
             <Route path="/return_policy" element={<ReturnPolicy />} />
+            <Route path="/shipping_policy" element={<ShippingPolicy />} />
             <Route path="/download" element={<DownloadPage />} />
             <Route path="/services" element={<NewServicePage data={data} />} />
             {/* <Route path="/cart" element={<CartPage />} /> */}
