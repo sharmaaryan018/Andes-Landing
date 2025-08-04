@@ -32,7 +32,7 @@ const PricingSection = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-lg font-semibold">₹50 minimum order</p>
+            <p className="text-lg font-semibold">₹99 minimum order</p>
           </div>
 
           {/* Feature 3 */}
@@ -44,7 +44,7 @@ const PricingSection = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <p className="text-lg font-semibold">Service fee from ₹8</p>
+            <p className="text-lg font-semibold">Convenience fee from ₹10</p>
           </div>
         </div>
       </div>
