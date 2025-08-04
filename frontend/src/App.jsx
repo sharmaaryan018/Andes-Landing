@@ -32,6 +32,7 @@ import ReturnPolicy from "./pages/ReturnPolicy";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ShippingPolicy from "./pages/ShippingPolicy";
 import SOP from "./pages/SOP";
+import { Analytics } from '@vercel/analytics/react'; // Import Analytics
 
 function App() {
   const scrollRef = useRef(null);
@@ -63,6 +64,7 @@ function App() {
   return (
     <>
             <Toaster position="top-center" reverseOrder={false} />
+            <Analytics /> {/* Add Analytics component here */}
 
       <Navbar />
 
