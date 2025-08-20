@@ -60,13 +60,13 @@ const LandingPage = () => {
           {/* Text Section */}
           <div className="mt-16 w-full md:w-[500px] text-white md:ml-32 mb-12 md:mb-0 md:pr-8">
             <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-2 leading-tight mt-2">
-              Laundry & dry
+              Quality Laundry.
             </h1>
             <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-2  leading-tight">
-              cleaning within
+              Delivery in
             </h1>
             <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold md:mb-10 mb-2 leading-tight">
-              24h delivery
+              minutes
             </h1>
 
             {/* Typewriter text with fixed height and left alignment */}
@@ -79,6 +79,12 @@ const LandingPage = () => {
             >
               {/* {typewriterText} */} Kothrud, Pune
             </h1>
+
+            <div className="mt-2 mb-6">
+              <span className="inline-block bg-white bg-opacity-20 rounded-full px-5 py-2 text-lg md:text-xl font-semibold text-white shadow-lg backdrop-blur-md border border-yellow-300">
+                🚀 Expanding soon to your city. Stay tuned for the next revolution in laundry!
+              </span>
+            </div>
 
             {/* Store links */}
             <div className="rounded-lg flex flex-row items-center mt-6 md:mb-4 space-x-4">
@@ -149,7 +155,7 @@ const LandingPage = () => {
               The #1 Smart Laundry Service
             </h1>
             <p className="text-sm">
-              in categories Dry cleaner, Laundry service and Laundrette{" "}
+              In category of laundry dry cleaning and ironing{" "}
             </p>
           </div>
           {/* Star Rating Section */}

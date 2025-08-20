@@ -18,17 +18,17 @@ const PricingHighlights = () => {
         </div>
         <div className="flex flex-col items-center p-4">
           <FaTruck className="text-indigo-600 text-3xl mb-2" />
-          <h3 className="font-semibold text-gray-800">Free 48h Delivery</h3>
+          <h3 className="font-semibold text-gray-800">Free 48h -72h Delivery</h3>
           <p className="text-gray-600 text-sm text-center">Fast and reliable</p>
         </div>
         <div className="flex flex-col items-center p-4">
           <FaRupeeSign className="text-indigo-600 text-3xl mb-2" />
-          <h3 className="font-semibold text-gray-800">₹50 Minimum Order</h3>
+          <h3 className="font-semibold text-gray-800">₹199 Minimum Order</h3>
           <p className="text-gray-600 text-sm text-center">Easy to get started</p>
         </div>
         <div className="flex flex-col items-center p-4">
           <FaRupeeSign className="text-indigo-600 text-3xl mb-2" />
-          <h3 className="font-semibold text-gray-800">Service Fee from ₹8</h3>
+          <h3 className="font-semibold text-gray-800">Handling Fee from ₹10</h3>
           <p className="text-gray-600 text-sm text-center">Low additional costs</p>
         </div>
       </div>
