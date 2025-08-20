@@ -180,9 +180,9 @@ const PrivacyPolicy = () => (
           <div className="flex items-start mb-3">
             <FiMapPin className="h-5 w-5 text-blue-600 mt-1" />
             <div className="ml-3">
-              <p className="font-medium">Insert Name of the Officer</p>
-              <p className="text-gray-600">Designation</p>
-              <p className="text-gray-600">Insert Name and Address of the Company</p>
+              <p className="font-medium">Aryan Gupta</p>
+              <p className="text-gray-600">CEO</p>
+              <p className="text-gray-600">Andes Services Pvt. Ltd., Kothrud, Pune, Maharashtra, India </p>
             </div>
           </div>
           <div className="flex items-center mb-3">
@@ -191,7 +191,7 @@ const PrivacyPolicy = () => (
           </div>
           <div className="flex items-center">
             <FiPhone className="h-5 w-5 text-blue-600" />
-            <a href="tel:+918626076578" className="ml-3 text-blue-600 hover:underline">+91 86260 76578</a>
+            <a href="tel:+9174994 13025" className="ml-3 text-blue-600 hover:underline">+91 74994 13025</a>
           </div>
           <p className="mt-3 text-gray-500 flex items-center">
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">

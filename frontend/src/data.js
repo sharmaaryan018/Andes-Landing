@@ -27,7 +27,7 @@ import pantTrouser from './assets/pantTrouser.jpg';
 import shirtTshirt from './assets/shirtTshirt.jpg';
 import jeansImage from './assets/jeans.jpg';
 import blanketImage from './assets/singleBlanket.jpg';
-// import doubleBlanketImage from './assets/doubleBlanket.jpg';
+import doubleBlanketImage from './assets/doubleBlanket.jpg';
 import curtain from './assets/curtain.jpg';
 import carpet from './assets/carpet.jpg';
 import jerkin from './assets/jerkin.jpg';
@@ -77,13 +77,13 @@ const data = {
       discountedRateByKg: 50,
       unit: "kg",
       displayName: "By Kg",
-      customText: "₹59 - ₹79",
+      customText: "₹69 - ₹89",
       image: washFoldImage,
-      discount: 30,
-      washAndFoldPrice: 70,
-      washAndFoldDiscountedPrice: 59,
-      washAndIronPrice: 109,
-      washAndIronDiscountedPrice: 79
+      discount: 31,
+      washAndFoldPrice: 99,
+      washAndFoldDiscountedPrice: 69,
+      washAndIronPrice: 129,
+      washAndIronDiscountedPrice: 89
     },
     {
       id: 4,
@@ -106,45 +106,45 @@ const data = {
       description: "Dry cleaning service for formal shirts and pants.",
       categories: ["dry_cleaning"],
       rateByPiece: 70,
-      discountedRateByPiece: 45,
+      discountedRateByPiece: 49,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "piece",
       displayName: "Shirt & Pant",
       customText: "₹70",
       image: shirtPantImage,
-      discount: 35
+      discount: 30
     },
     {
       id: 6,
       name: "BEDSHEET (SINGLE)",
       description: "Dry cleaning service for single bedsheets.",
       categories: ["dry_cleaning"],
-      rateByPiece: 190,
-      discountedRateByPiece: 135,
+      rateByPiece: 213,
+      discountedRateByPiece: 149,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "piece",
       displayName: "Bedsheet (Single)",
-      customText: "₹190",
+      customText: "₹213",
       image: bedsheetBlanketImage,
-      discount: 35
+      discount: 30
     },
-    {
-      id: 7,
-      name: "Blanket (Single)",
-      description: "Wash service for single bedsheets.",
-      categories: ["dry_cleaning"],
-      rateByPiece: 60,
-      discountedRateByPiece: 40,
-      rateByKg: 0,
-      discountedRateByKg: 0,
-      unit: "piece",
-      displayName: "Bedsheet (Single)",
-      customText: "₹60",
-      image: bedsheetSingleImage,
+    // {
+    //   id: 7,
+    //   name: "Blanket (Single)",
+    //   description: "Wash service for single bedsheets.",
+    //   categories: ["dry_cleaning"],
+    //   rateByPiece: 60,
+    //   discountedRateByPiece: 40,
+    //   rateByKg: 0,
+    //   discountedRateByKg: 0,
+    //   unit: "piece",
+    //   displayName: "Bedsheet (Single)",
+    //   customText: "₹60",
+    //   image: bedsheetSingleImage,
       
-    },
+    // },
     {
       id: 8,
       name: "UNIFORM",
@@ -156,49 +156,49 @@ const data = {
       discountedRateByKg: 0,
       unit: "piece",
       displayName: "Uniform",
-      customText: "₹50 - ₹60",
+      customText: "₹50 - ₹69",
       image: uniformImage,
       discount: 33,
       washAndFoldPrice: 70,
       washAndFoldDiscountedPrice: 50,
-      washAndIronPrice: 85,
-      washAndIronDiscountedPrice: 60
+      washAndIronPrice: 99,
+      washAndIronDiscountedPrice: 69
     },
     {
       id: 9,
       name: "SIMPLE SHOES/SPORTS SHOES",
       description: "Cleaning service for casual shoes.",
       categories: ["others", "shoes"],
-      rateByPiece: 150,
-      discountedRateByPiece: 100,
+      rateByPiece: 213,
+      discountedRateByPiece: 149,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "pair",
       displayName: "Simple Shoes",
       customText: "₹150",
       image: simpleShoesImage,
-      discount: 33
+      discount: 30
     },
     {
       id: 10,
       name: "LOAFERS/SNEAKERS",
       description: "Premium cleaning service for loafers and sneakers.",
       categories: ["others", "shoes"],
-      rateByPiece: 135,
-      discountedRateByPiece: 90,
+      rateByPiece: 285,
+      discountedRateByPiece: 199,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "pair",
       displayName: "Loafers/Sneakers(shoes)",
       customText: "₹135",
       image: loafersSneakersImage,
-      discount: 33
+      discount: 30
     },
     {
       id: 12,
       name: "SAREE - EMBROIDERY",
-      description: "Special dry cleaning for embroidered sarees.",
-      categories: ["dry_cleaning", "general"],
+      description: "cleaning for embroidered sarees.",
+      categories: [ "general"],
       rateByPiece: 150,
       discountedRateByPiece: 100,
       rateByKg: 0,
@@ -214,19 +214,34 @@ const data = {
       washAndIronDiscountedPrice: 110
     },
     {
+      id: 13,
+      name: "SAREE - premium",
+      description: "Special dry cleaning for embroidered sarees.",
+      categories: ["dry_cleaning"],
+      rateByPiece: 715,
+      discountedRateByPiece: 499,
+      rateByKg: 0,
+      discountedRateByKg: 0,
+      unit: "piece",
+      displayName: "Saree (Embroidery)",
+      customText: "₹100 - ₹110",
+      image: sareeEmbroideryImage,
+      discount: 33
+    },
+    {
       id: 14,
       name: "SAREE",
       description: "Dry cleaning service for regular sarees.",
       categories: ["dry_cleaning"],
-      rateByPiece: 135,
-      discountedRateByPiece: 80,
+      rateByPiece: 285,
+      discountedRateByPiece: 199,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "piece",
       displayName: "Saree",
-      customText: "₹80",
+      customText: "₹285",
       image: sareeImage,
-      discount: 33
+      discount: 30
     },
     {
       id: 15,
@@ -252,15 +267,15 @@ const data = {
       name: "BLOUSE",
       description: "Dry cleaning service for blouses.",
       categories: ["dry_cleaning"],
-      rateByPiece: 45,
-      discountedRateByPiece: 30,
+      rateByPiece: 99,
+      discountedRateByPiece: 69,
       rateByKg: 0,
       discountedRateByKg: 0,
       unit: "piece",
       displayName: "Blouse",
       customText: "₹55",
       image: blouseImage,
-      discount: 33
+      discount: 30
     },
     {
       id: 17,
@@ -505,6 +520,22 @@ const data = {
     //   washAndIronPrice: 165,
     //   washAndIronDiscountedPrice: 110
     // }
+    {
+      id: 29,
+      name: "BLANKET (DOUBLE)",
+      description: "Dry cleaning service for double blankets.",
+      categories: ["dry_cleaning"],
+      rateByPiece: 285,
+      discountedRateByPiece: 199,
+      rateByKg: 0,
+      discountedRateByKg: 0,
+      unit: "piece",
+      displayName: "Blanket (Double)",
+      customText: "₹285",
+      image: doubleBlanketImage,
+      discount: 30,
+
+    }
   ],
 
     

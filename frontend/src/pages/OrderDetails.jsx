@@ -264,7 +264,7 @@ const OrderDetails = () => {
                   WhatsApp
                 </a>
                 <a 
-                  href="tel:8626076578"
+                  href="tel:74994 13025"
                   className="flex items-center text-blue-600 hover:text-blue-800"
                 >
                   <PhoneIcon className="h-4 w-4 mr-1" />
