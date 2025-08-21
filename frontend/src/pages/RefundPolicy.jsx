@@ -240,7 +240,7 @@ const RefundPolicy = () => (
             Refund requests must be made within <span className="font-semibold text-blue-700">2 days of order completion</span>.
           </li>
           <li>
-            Once approved, refunds will be processed within <span className="font-semibold text-blue-700">7 business days</span> to your original payment method.
+            Once approved, refunds will be processed within <span className="font-semibold text-blue-700">7 business days (168hrs)</span> to your original payment method.
           </li>
         </ul>
       </section>

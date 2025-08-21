@@ -180,7 +180,7 @@ const PrivacyPolicy = () => (
           <div className="flex items-start mb-3">
             <FiMapPin className="h-5 w-5 text-blue-600 mt-1" />
             <div className="ml-3">
-              <p className="font-medium">Aryan Gupta</p>
+              <p className="font-medium">Aryan Ramesh Gupta</p>
               <p className="text-gray-600">CEO</p>
               <p className="text-gray-600">Andes Services Pvt. Ltd., Kothrud, Pune, Maharashtra, India </p>
             </div>
