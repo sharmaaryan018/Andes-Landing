@@ -240,7 +240,7 @@ const RefundPolicy = () => (
             Refund requests must be made within <span className="font-semibold text-blue-700">2 days of order completion</span>.
           </li>
           <li>
-            Once approved, refunds will be processed within <span className="font-semibold text-blue-700">7 business days (168hrs)</span> to your original payment method.
+            Once approved, refunds will be credited within <span className="font-semibold text-blue-700">7 business days (168hrs)</span> to your original payment method.
           </li>
         </ul>
       </section>
@@ -252,7 +252,7 @@ const RefundPolicy = () => (
         </h2>
         <ul className="list-disc pl-6 space-y-2 text-gray-700">
           <li>
-            <span className="font-semibold">Perishable/Delicate Clothing</span> (silk, wool, leather, designer wear) is excluded from refund unless the issue is caused due to Andes’ mishandling.
+            <span className="font-semibold">Delicate Clothing</span> (silk, wool, leather, designer wear) is excluded from refund unless the issue is caused due to Andes’ mishandling.
           </li>
         </ul>
       </section>
